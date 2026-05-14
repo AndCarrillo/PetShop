@@ -1,34 +1,327 @@
-
 const PRODUCTS = [
-  {id:1,nombre:"Pedigree High Protein Res y Pollo 4kg",descripcion:"Alimento para perro adulto con proteína y sabor res y pollo.",categoria:"Alimento",tipo:"Perros",precio:12500,imagen:"assets/img/productos/pedigree4kg.png",atributos:"4 kg | Adulto | Res y pollo"},
-  {id:2,nombre:"Dog Chow Cachorro 2kg",descripcion:"Alimento para cachorros medianos y grandes.",categoria:"Alimento",tipo:"Perros",precio:9800,imagen:"assets/img/productos/dogchow2kg.png",atributos:"2 kg | Cachorros | Medianos y grandes"},
-  {id:3,nombre:"Hueso Dental Nylabone",descripcion:"Juguete mordedor para higiene dental canina.",categoria:"Juguetes",tipo:"Perros",precio:3500,imagen:"assets/img/productos/hueso.png",atributos:"Sabor bacon | 1 unidad | Resistente"},
-  {id:4,nombre:"Shampoo Micelar Mascotas Aloe",descripcion:"Shampoo para higiene de mascotas con aloe.",categoria:"Higiene",tipo:"Perros",precio:4200,imagen:"assets/img/productos/shampoo_canino.png",atributos:"750 ml | Aloe | Uso cosmético"},
-  {id:5,nombre:"Collar Ruffwear Azul",descripcion:"Collar ajustable para perro en talla L.",categoria:"Accesorios",tipo:"Perros",precio:7800,imagen:"assets/img/productos/collar.png",atributos:"Talla L | Azul | Ajustable"},
-  {id:6,nombre:"Cama Ovalada para Mascota",descripcion:"Cama acolchada ovalada para perros o gatos.",categoria:"Accesorios",tipo:"Perros",precio:18500,imagen:"assets/img/productos/cama.png",atributos:"Ovalada | 1 unidad | Acolchada"},
-  {id:7,nombre:"Jerky Sticks Beef Lung",descripcion:"Premios tipo jerky sticks para perros.",categoria:"Salud",tipo:"Perros",precio:3900,imagen:"assets/img/productos/snacks.png",atributos:"232 g | Beef lung | Premios"},
-  {id:8,nombre:"Juguete Popet Ratones",descripcion:"Juguete para gato con catnip.",categoria:"Juguetes",tipo:"Gatos",precio:2500,imagen:"assets/img/productos/raton.png",atributos:"3 unidades | Catnip | Felino"},
-  {id:9,nombre:"Arena Cat Litter Aroma Manzana 5kg",descripcion:"Arena para gatos super aglomerante con control de olores.",categoria:"Higiene",tipo:"Gatos",precio:6900,imagen:"assets/img/productos/arena.png",atributos:"5 kg | Aroma manzana | Aglomerante"},
-  {id:10,nombre:"Arnés Ajustable Negro",descripcion:"Arnés cómodo y resistente para paseo de mascotas.",categoria:"Accesorios",tipo:"Perros",precio:8500,imagen:"assets/img/productos/arnes.png",atributos:"1 unidad | Ajustable | Negro"},
-  {id:11,nombre:"Cat Chow Adultos Pescado 1.5kg",descripcion:"Alimento para gatos adultos sabor pescado.",categoria:"Alimento",tipo:"Gatos",precio:7200,imagen:"assets/img/productos/catchow.png",atributos:"1.5 kg | Adultos | Pescado"},
-  {id:12,nombre:"Dispensador de Agua Lena 2L",descripcion:"Fuente y dispensador de agua para perros y gatos.",categoria:"Accesorios",tipo:"Gatos",precio:14500,imagen:"assets/img/productos/fuente.png",atributos:"2 litros | Dispensador | Automático"},
-  {id:13,nombre:"Rascador para Gato",descripcion:"Rascador vertical con juguete colgante.",categoria:"Juguetes",tipo:"Gatos",precio:11900,imagen:"assets/img/productos/rascador.png",atributos:"1 unidad | Vertical | Felino"},
-  {id:14,nombre:"Waldo Cat Pillows Salmón",descripcion:"Snack para gato relleno sabor salmón.",categoria:"Salud",tipo:"Gatos",precio:2800,imagen:"assets/img/productos/snaks_gato.png",atributos:"110 g | Salmón | Snack"},
-  {id:15,nombre:"Transportadora para Mascotas",descripcion:"Transportadora resistente para viajes y veterinaria.",categoria:"Accesorios",tipo:"Gatos",precio:22500,imagen:"assets/img/productos/transportadora.png",atributos:"11-14 kg | Plástico | Reforzada"},
-  {id:16,nombre:"Whiskas Adulto Carne 500g",descripcion:"Alimento para gato adulto sabor carne.",categoria:"Alimento",tipo:"Gatos",precio:3200,imagen:"assets/img/productos/whiskas1kg.png",atributos:"500 g | Carne | Adulto"},{id:17,nombre:"Bebedero Living World 125ml",descripcion:"Bebedero para aves pequeñas, útil para agua o semillas.",categoria:"Accesorios",tipo:"Aves",precio:2600,imagen:"assets/img/productos/bebedero.png",atributos:"125 ml | Aves pequeñas | Plástico"},
-  {id:18,nombre:"Columpio Colorido para Aves",descripcion:"Columpio con cadenas y piezas de colores para entretenimiento de aves.",categoria:"Juguetes",tipo:"Aves",precio:2200,imagen:"assets/img/productos/columpio.png",atributos:"1 unidad | Madera | Colores variados"},
-  {id:19,nombre:"Jaula Roja para Aves",descripcion:"Jaula metálica para aves pequeñas con comederos y percha.",categoria:"Accesorios",tipo:"Aves",precio:28000,imagen:"assets/img/productos/jaula.jpg",atributos:"Metálica | Incluye accesorios | Tamaño mediano"},
-  {id:20,nombre:"Semillas Kiki Canario 400g",descripcion:"Mezcla de semillas vita para canario.",categoria:"Alimento",tipo:"Aves",precio:4500,imagen:"assets/img/productos/semillas.png",atributos:"400 g | Canario | Mezcla de semillas"},
-  {id:21,nombre:"Vitaminas Calfomin para Aves",descripcion:"Suplemento vitamínico para aves de compañía.",categoria:"Salud",tipo:"Aves",precio:3800,imagen:"assets/img/productos/vitaminas_aves.png",atributos:"30 ml | Suplemento | Uso en aves"},{id:22,nombre:"Planta Decorativa Azul para Acuario",descripcion:"Decoración tipo coral/planta artificial para peceras.",categoria:"Accesorios",tipo:"Peces",precio:4800,imagen:"assets/img/productos/coral.png",atributos:"Decoración | Azul | Base incluida"},
-  {id:23,nombre:"Nutrafin Basix Hojuelas 12g",descripcion:"Alimento en hojuelas para peces tropicales.",categoria:"Alimento",tipo:"Peces",precio:2800,imagen:"assets/img/productos/escamas.png",atributos:"12 g | Peces tropicales | Hojuelas"},
-  {id:24,nombre:"Filtro Aire Aqueon QuietFlow 10",descripcion:"Bomba de aire silenciosa para acuarios pequeños.",categoria:"Salud",tipo:"Peces",precio:9500,imagen:"assets/img/productos/filtro.png",atributos:"Hasta 10 galones | Silencioso | Bajo consumo"},
-  {id:25,nombre:"Luz LED para Acuario",descripcion:"Iluminación LED para mejorar la visibilidad del acuario.",categoria:"Accesorios",tipo:"Peces",precio:12500,imagen:"assets/img/productos/luz_led.png",atributos:"LED azul/blanco | Para pecera | Bajo consumo"},
-  {id:26,nombre:"Pecera Rectangular 20L",descripcion:"Pecera rectangular con tapa para peces pequeños.",categoria:"Accesorios",tipo:"Peces",precio:32000,imagen:"assets/img/productos/pecera.png",atributos:"20 litros | Rectangular | Vidrio"},{id:27,nombre:"Viruta Kaytee Clean & Cozy",descripcion:"Viruta absorbente con control de olor para roedores y conejos.",categoria:"Higiene",tipo:"Pequeñas especies",precio:6900,imagen:"assets/img/productos/viruta.png",atributos:"1 unidad | Control de olor | Absorbente"},
-  {id:28,nombre:"Rueda Azul para Hámster",descripcion:"Rueda de ejercicio silenciosa para hámster y pequeños roedores.",categoria:"Juguetes",tipo:"Pequeñas especies",precio:5400,imagen:"assets/img/productos/wheel.jpg",atributos:"Azul | Silenciosa | Ejercicio"},
-  {id:29,nombre:"Bebedero para Roedores",descripcion:"Bebedero automático para conejos, cuyos y hurones.",categoria:"Accesorios",tipo:"Pequeñas especies",precio:4800,imagen:"assets/img/productos/bebedero_roedor.jpg",atributos:"Automático | Azul | Fácil instalación"},
-  {id:30,nombre:"Rabbit Plus Conejo Mix 2kg",descripcion:"Alimento balanceado para conejos domésticos.",categoria:"Alimento",tipo:"Pequeñas especies",precio:7600,imagen:"assets/img/productos/conejo.png",atributos:"2 kg | Conejos | Balanceado"},
-  {id:31,nombre:"Jaula Deluxe para Hámster",descripcion:"Jaula completa para hámster con rueda y accesorios.",categoria:"Accesorios",tipo:"Pequeñas especies",precio:36500,imagen:"assets/img/productos/jaula_hamster.jpg",atributos:"Incluye rueda | Bebedero | Casa"},
-  {id:32,nombre:"Snack Curly Puffs Zanahoria",descripcion:"Snack para conejos y pequeños roedores sabor zanahoria.",categoria:"Salud",tipo:"Pequeñas especies",precio:3500,imagen:"assets/img/productos/snack_zanahoria.jpg",atributos:"9 piezas | Zanahoria | Premio"}
+  {
+    id: 1,
+    nombre: "Pedigree res y pollo 4kg",
+    descripcion: "Alimento para perro adulto con proteína y sabor res y pollo.",
+    categoria: "Alimento",
+    tipo: "Perros",
+    precio: 12500,
+    imagen: "assets/img/productos/pedigree4kg.png",
+    atributos: "4 kg | Adulto | Res y pollo",
+  },
+  {
+    id: 2,
+    nombre: "Dog Chow cachorro 2kg",
+    descripcion: "Alimento para cachorros medianos y grandes.",
+    categoria: "Alimento",
+    tipo: "Perros",
+    precio: 9800,
+    imagen: "assets/img/productos/dogchow2kg.png",
+    atributos: "2 kg | Cachorros | Medianos y grandes",
+  },
+  {
+    id: 3,
+    nombre: "Hueso dental",
+    descripcion: "Juguete mordedor para higiene dental canina.",
+    categoria: "Juguetes",
+    tipo: "Perros",
+    precio: 3500,
+    imagen: "assets/img/productos/hueso.png",
+    atributos: "Sabor bacon | 1 unidad | Resistente",
+  },
+  {
+    id: 4,
+    nombre: "Shampoo para mascotas",
+    descripcion: "Shampoo para higiene de mascotas con aloe.",
+    categoria: "Higiene",
+    tipo: "Perros",
+    precio: 4200,
+    imagen: "assets/img/productos/shampoo_canino.png",
+    atributos: "750 ml | Aloe | Uso cosmético",
+  },
+  {
+    id: 5,
+    nombre: "Collar ajustable",
+    descripcion: "Collar ajustable para perro en talla L.",
+    categoria: "Accesorios",
+    tipo: "Perros",
+    precio: 7800,
+    imagen: "assets/img/productos/collar.png",
+    atributos: "Talla L | Azul | Ajustable",
+  },
+  {
+    id: 6,
+    nombre: "Cama ovalada para mascota",
+    descripcion: "Cama acolchada ovalada.",
+    categoria: "Accesorios",
+    tipo: "Perros",
+    precio: 18500,
+    imagen: "assets/img/productos/cama.png",
+    atributos: "Ovalada | 1 unidad | Acolchada",
+  },
+  {
+    id: 7,
+    nombre: "Snacks para perro",
+    descripcion: "Premios tipo jerky sticks.",
+    categoria: "Salud",
+    tipo: "Perros",
+    precio: 3900,
+    imagen: "assets/img/productos/snacks.png",
+    atributos: "232 g | Beef lung | Premios",
+  },
+  {
+    id: 8,
+    nombre: "Juguete para ratones",
+    descripcion: "Juguete para gato con catnip.",
+    categoria: "Juguetes",
+    tipo: "Gatos",
+    precio: 2500,
+    imagen: "assets/img/productos/raton.png",
+    atributos: "3 unidades | Catnip | Felino",
+  },
+  {
+    id: 9,
+    nombre: "Arena cat litter 5kg",
+    descripcion: "Arena para gatos super aglomerante con control de olores.",
+    categoria: "Higiene",
+    tipo: "Gatos",
+    precio: 6900,
+    imagen: "assets/img/productos/arena.png",
+    atributos: "5 kg | Aroma manzana | Aglomerante",
+  },
+  {
+    id: 10,
+    nombre: "Arnés ajustable",
+    descripcion: "Arnés cómodo y resistente para paseo de mascotas.",
+    categoria: "Accesorios",
+    tipo: "Perros",
+    precio: 8500,
+    imagen: "assets/img/productos/arnes.png",
+    atributos: "1 unidad | Ajustable | Negro",
+  },
+  {
+    id: 11,
+    nombre: "Cat Chow adultos 1.5kg",
+    descripcion: "Alimento para gatos adultos sabor pescado.",
+    categoria: "Alimento",
+    tipo: "Gatos",
+    precio: 7200,
+    imagen: "assets/img/productos/catchow.png",
+    atributos: "1.5 kg | Adultos | Pescado",
+  },
+  {
+    id: 12,
+    nombre: "Dispensador de agua 2L",
+    descripcion: "Fuente y dispensador de agua para perros y gatos.",
+    categoria: "Accesorios",
+    tipo: "Gatos",
+    precio: 14500,
+    imagen: "assets/img/productos/fuente.png",
+    atributos: "2 litros | Dispensador | Automático",
+  },
+  {
+    id: 13,
+    nombre: "Rascador para gato",
+    descripcion: "Rascador vertical con juguete colgante.",
+    categoria: "Juguetes",
+    tipo: "Gatos",
+    precio: 11900,
+    imagen: "assets/img/productos/rascador.png",
+    atributos: "1 unidad | Vertical | Felino",
+  },
+  {
+    id: 14,
+    nombre: "Snack para gato",
+    descripcion: "Snack para gato relleno sabor salmón.",
+    categoria: "Salud",
+    tipo: "Gatos",
+    precio: 2800,
+    imagen: "assets/img/productos/snaks_gato.png",
+    atributos: "110 g | Salmón | Snack",
+  },
+  {
+    id: 15,
+    nombre: "Transportadora para mascotas",
+    descripcion: "Transportadora resistente para viajes y veterinaria.",
+    categoria: "Accesorios",
+    tipo: "Gatos",
+    precio: 22500,
+    imagen: "assets/img/productos/transportadora.png",
+    atributos: "11-14 kg | Plástico | Reforzada",
+  },
+  {
+    id: 16,
+    nombre: "Whiskas adulto 500g",
+    descripcion: "Alimento para gato adulto sabor carne.",
+    categoria: "Alimento",
+    tipo: "Gatos",
+    precio: 3200,
+    imagen: "assets/img/productos/whiskas1kg.png",
+    atributos: "500 g | Carne | Adulto",
+  },
+  {
+    id: 17,
+    nombre: "Bebedero Living 125ml",
+    descripcion: "Bebedero para aves pequeñas, útil para agua o semillas.",
+    categoria: "Accesorios",
+    tipo: "Aves",
+    precio: 2600,
+    imagen: "assets/img/productos/bebedero.png",
+    atributos: "125 ml | Aves pequeñas | Plástico",
+  },
+  {
+    id: 18,
+    nombre: "Columpio colorido",
+    descripcion:
+      "Columpio con cadenas y piezas de colores para entretenimiento de aves.",
+    categoria: "Juguetes",
+    tipo: "Aves",
+    precio: 2200,
+    imagen: "assets/img/productos/columpio.png",
+    atributos: "1 unidad | Madera | Colores variados",
+  },
+  {
+    id: 19,
+    nombre: "Jaula mediana",
+    descripcion: "Jaula metálica para aves pequeñas con comederos y percha.",
+    categoria: "Accesorios",
+    tipo: "Aves",
+    precio: 28000,
+    imagen: "assets/img/productos/jaula.jpg",
+    atributos: "Metálica | Incluye accesorios | Tamaño mediano",
+  },
+  {
+    id: 20,
+    nombre: "Semillas para canario 400g",
+    descripcion: "Mezcla de semillas vita para canario.",
+    categoria: "Alimento",
+    tipo: "Aves",
+    precio: 4500,
+    imagen: "assets/img/productos/semillas.png",
+    atributos: "400 g | Canario | Mezcla de semillas",
+  },
+  {
+    id: 21,
+    nombre: "Vitaminas para aves",
+    descripcion: "Suplemento vitamínico para aves de compañía.",
+    categoria: "Salud",
+    tipo: "Aves",
+    precio: 3800,
+    imagen: "assets/img/productos/vitaminas_aves.png",
+    atributos: "30 ml | Suplemento | Uso en aves",
+  },
+  {
+    id: 22,
+    nombre: "Planta para acuario",
+    descripcion: "Decoración tipo coral/planta artificial para peceras.",
+    categoria: "Accesorios",
+    tipo: "Peces",
+    precio: 4800,
+    imagen: "assets/img/productos/coral.png",
+    atributos: "Decoración | Azul | Base incluida",
+  },
+  {
+    id: 23,
+    nombre: "Hojuelas 12g",
+    descripcion: "Alimento en hojuelas para peces tropicales.",
+    categoria: "Alimento",
+    tipo: "Peces",
+    precio: 2800,
+    imagen: "assets/img/productos/escamas.png",
+    atributos: "12 g | Peces tropicales | Hojuelas",
+  },
+  {
+    id: 24,
+    nombre: "Filtro de aire",
+    descripcion: "Bomba de aire silenciosa para acuarios pequeños.",
+    categoria: "Salud",
+    tipo: "Peces",
+    precio: 9500,
+    imagen: "assets/img/productos/filtro.png",
+    atributos: "Hasta 10 galones | Silencioso | Bajo consumo",
+  },
+  {
+    id: 25,
+    nombre: "Luz LED para acuario",
+    descripcion: "Iluminación LED para mejorar la visibilidad del acuario.",
+    categoria: "Accesorios",
+    tipo: "Peces",
+    precio: 12500,
+    imagen: "assets/img/productos/luz_led.png",
+    atributos: "LED azul/blanco | Para pecera | Bajo consumo",
+  },
+  {
+    id: 26,
+    nombre: "Pecera rectangular 20L",
+    descripcion: "Pecera rectangular con tapa para peces pequeños.",
+    categoria: "Accesorios",
+    tipo: "Peces",
+    precio: 32000,
+    imagen: "assets/img/productos/pecera.png",
+    atributos: "20 litros | Rectangular | Vidrio",
+  },
+  {
+    id: 27,
+    nombre: "Viruta para roedores",
+    descripcion:
+      "Viruta absorbente con control de olor para roedores y conejos.",
+    categoria: "Higiene",
+    tipo: "Pequeñas especies",
+    precio: 6900,
+    imagen: "assets/img/productos/viruta.png",
+    atributos: "1 unidad | Control de olor | Absorbente",
+  },
+  {
+    id: 28,
+    nombre: "Rueda para hamster",
+    descripcion:
+      "Rueda de ejercicio silenciosa para hámster y pequeños roedores.",
+    categoria: "Juguetes",
+    tipo: "Pequeñas especies",
+    precio: 5400,
+    imagen: "assets/img/productos/wheel.jpg",
+    atributos: "Azul | Silenciosa | Ejercicio",
+  },
+  {
+    id: 29,
+    nombre: "Bebedero para roedores",
+    descripcion: "Bebedero automático para conejos, cuyos y hurones.",
+    categoria: "Accesorios",
+    tipo: "Pequeñas especies",
+    precio: 4800,
+    imagen: "assets/img/productos/bebedero_roedor.jpg",
+    atributos: "Automático | Azul | Fácil instalación",
+  },
+  {
+    id: 30,
+    nombre: "Alimento para conejos 2kg",
+    descripcion: "Alimento balanceado para conejos domésticos.",
+    categoria: "Alimento",
+    tipo: "Pequeñas especies",
+    precio: 7600,
+    imagen: "assets/img/productos/conejo.png",
+    atributos: "2 kg | Conejos | Balanceado",
+  },
+  {
+    id: 31,
+    nombre: "Jaula para hamster",
+    descripcion: "Jaula completa para hámster con rueda y accesorios.",
+    categoria: "Accesorios",
+    tipo: "Pequeñas especies",
+    precio: 36500,
+    imagen: "assets/img/productos/jaula_hamster.jpg",
+    atributos: "Incluye rueda | Bebedero | Casa",
+  },
+  {
+    id: 32,
+    nombre: "Snack zanahoria",
+    descripcion: "Snack para conejos y pequeños roedores sabor zanahoria.",
+    categoria: "Salud",
+    tipo: "Pequeñas especies",
+    precio: 3500,
+    imagen: "assets/img/productos/snack_zanahoria.jpg",
+    atributos: "9 piezas | Zanahoria | Premio",
+  },
 ];
 
 const money = (value) => "₡" + Number(value || 0).toLocaleString("es-CR");
@@ -45,7 +338,6 @@ function slugify(value) {
     .replace(/-+/g, "-")
     .replace(/^-|-$/g, "");
 }
-
 
 function normalizeCart(rawCart) {
   const normalized = {};
@@ -75,7 +367,9 @@ function normalizeCart(rawCart) {
 
 function getCart() {
   try {
-    return normalizeCart(JSON.parse(localStorage.getItem("petshop_cart") || "{}"));
+    return normalizeCart(
+      JSON.parse(localStorage.getItem("petshop_cart") || "{}"),
+    );
   } catch {
     return {};
   }
@@ -87,12 +381,15 @@ function setCart(cart) {
 }
 
 function getProduct(id) {
-  return PRODUCTS.find(product => product.id === Number(id));
+  return PRODUCTS.find((product) => product.id === Number(id));
 }
 
 function updateCartCount() {
-  const totalItems = Object.values(getCart()).reduce((sum, qty) => sum + Number(qty), 0);
-  document.querySelectorAll(".cart-count").forEach(el => {
+  const totalItems = Object.values(getCart()).reduce(
+    (sum, qty) => sum + Number(qty),
+    0,
+  );
+  document.querySelectorAll(".cart-count").forEach((el) => {
     el.textContent = totalItems;
   });
 }
@@ -134,27 +431,44 @@ function getCartEntries() {
   return Object.entries(cart)
     .map(([id, qty]) => ({
       product: getProduct(id),
-      qty: Number(qty)
+      qty: Number(qty),
     }))
-    .filter(item => item.product && item.qty > 0);
+    .filter((item) => item.product && item.qty > 0);
 }
 
 function productCard(product) {
   return `
     <div class="col-sm-6 col-lg-4 col-xl-3">
       <article class="card product-card h-100 shadow-sm">
-        <img src="${product.imagen}" alt="${product.nombre}" class="card-img-top product-img">
-        <div class="card-body d-flex flex-column">
-          <span class="badge badge-soft align-self-start mb-2">${product.tipo} · ${product.categoria}</span>
-          <h5 class="card-title">${product.nombre}</h5>
-          <p class="small text-muted flex-grow-1">${product.descripcion}</p>
-          <p class="price mb-1">${money(product.precio)}</p>
-          <p class="small mb-3">${product.atributos}</p>
 
-          <div class="d-grid gap-2 mt-auto">
-            <a class="btn btn-outline-primary" href="detalle.html?id=${product.id}">Ver detalle</a>
-            <button class="btn btn-primary" type="button" onclick="addToCart(${product.id})">Agregar al carrito</button>
+        <img src="${product.imagen}" 
+            alt="${product.nombre}" 
+            class="card-img-top product-img">
+
+        <div class="card-body d-flex flex-column">
+
+          <span class="badge badge-soft align-self-start mb-2">
+            ${product.tipo}
+          </span>
+
+          <h5 class="card-title mb-2">
+            ${product.nombre}
+          </h5>
+
+          <p class="price mb-3">
+            ${money(product.precio)}
+          </p>
+
+          <div class="mt-auto d-flex gap-2">
+            <a class="btn btn-outline-primary btn-sm flex-fill"
+              href="detalle.html?id=${product.id}">
+              Ver detalle
+            </a>
+            <button class="btn btn-primary btn-sm px-3" type="button" onclick="addToCart(${product.id})" 
+            aria-label="Agregar al carrito"title="Agregar al carrito"><i class="bi bi-cart-plus"></i>
+            </button>
           </div>
+
         </div>
       </article>
     </div>
@@ -169,10 +483,6 @@ function renderProducts(targetId, products = PRODUCTS) {
     ? products.map(productCard).join("")
     : `<div class="col-12"><div class="alert alert-pet">No se encontraron productos para esta búsqueda.</div></div>`;
 }
-
-
-
-
 
 function syncSearchFilters({ query, tipo, categoriaProducto, precioMax }) {
   const qInput = document.getElementById("q");
@@ -202,26 +512,34 @@ function renderProductsPage() {
   let products = [...PRODUCTS];
 
   if (categoria) {
-    products = products.filter(product => slugify(product.tipo) === slugify(categoria));
+    products = products.filter(
+      (product) => slugify(product.tipo) === slugify(categoria),
+    );
   }
 
   if (tipo) {
-    products = products.filter(product => slugify(product.tipo) === slugify(tipo));
+    products = products.filter(
+      (product) => slugify(product.tipo) === slugify(tipo),
+    );
   }
 
   if (categoriaProducto) {
-    products = products.filter(product => slugify(product.categoria) === slugify(categoriaProducto));
+    products = products.filter(
+      (product) => slugify(product.categoria) === slugify(categoriaProducto),
+    );
   }
 
   if (precioMax > 0) {
-    products = products.filter(product => Number(product.precio) <= precioMax);
+    products = products.filter(
+      (product) => Number(product.precio) <= precioMax,
+    );
   }
 
   if (query) {
-    products = products.filter(product =>
+    products = products.filter((product) =>
       `${product.nombre} ${product.descripcion} ${product.categoria} ${product.tipo} ${product.atributos}`
         .toLowerCase()
-        .includes(query)
+        .includes(query),
     );
   }
 
@@ -249,12 +567,26 @@ function renderProductsPage() {
   syncSearchFilters({ query, tipo, categoriaProducto, precioMax });
 
   renderProducts("productsGrid", visibleProducts);
-  renderPagination(totalPages, safePage, categoria, query, tipo, categoriaProducto, precioMax);
+  renderPagination(
+    totalPages,
+    safePage,
+    categoria,
+    query,
+    tipo,
+    categoriaProducto,
+    precioMax,
+  );
 }
 
-
-
-function renderPagination(totalPages, currentPage, categoria, query, tipo, categoriaProducto, precioMax) {
+function renderPagination(
+  totalPages,
+  currentPage,
+  categoria,
+  query,
+  tipo,
+  categoriaProducto,
+  precioMax,
+) {
   const container = document.getElementById("paginationContainer");
   if (!container) return;
 
@@ -299,9 +631,6 @@ function renderPagination(totalPages, currentPage, categoria, query, tipo, categ
   `;
 }
 
-
-
-
 function renderDetail() {
   const container = document.getElementById("detailContent");
   if (!container) return;
@@ -310,32 +639,62 @@ function renderDetail() {
   const product = getProduct(id) || PRODUCTS[0];
 
   container.innerHTML = `
-    <div class="row g-4 align-items-center">
-      <div class="col-lg-5">
-        <img src="${product.imagen}" class="img-fluid rounded-4 border p-3" alt="${product.nombre}">
-      </div>
+    <div class="row g-4 align-items-center detail-layout">
 
-      <div class="col-lg-7">
-        <span class="badge badge-soft mb-2">${product.tipo} · ${product.categoria}</span>
-        <h1 class="fw-bold">${product.nombre}</h1>
-        <p class="lead text-muted">${product.descripcion}</p>
-        <p class="price fs-2">${money(product.precio)}</p>
-        <p><strong>Atributos:</strong> ${product.atributos}</p>
-
-        <div class="d-flex gap-2 flex-wrap">
-          <button class="btn btn-primary btn-lg" onclick="addToCart(${product.id})">Agregar al carrito</button>
-          <a class="btn btn-outline-primary btn-lg" href="productos.html">Volver al catálogo</a>
+      <div class="col-12 col-lg-5">
+        <div class="detail-image-box">
+          <img src="${product.imagen}" 
+              class="img-fluid detail-img" 
+              alt="${product.nombre}">
         </div>
       </div>
+
+      <div class="col-12 col-lg-7">
+        <span class="badge badge-soft mb-2">
+          ${product.tipo} · ${product.categoria}
+        </span>
+
+        <h1 class="fw-bold detail-title">
+          ${product.nombre}
+        </h1>
+
+        <p class="lead text-muted detail-description">
+          ${product.descripcion}
+        </p>
+
+        <p class="price fs-2">
+          ${money(product.precio)}
+        </p>
+
+        <p class="detail-attributes">
+          <strong>Atributos:</strong> ${product.atributos}
+        </p>
+
+        <div class="detail-actions">
+          <button class="btn btn-primary detail-add-btn" 
+                  onclick="addToCart(${product.id})">
+            <i class="bi bi-cart-plus-fill"></i>
+            Agregar al carrito
+          </button>
+
+          <a class="btn btn-outline-primary detail-back-btn" 
+            href="productos.html">
+            Volver al catálogo
+          </a>
+        </div>
+      </div>
+
     </div>
   `;
 
-  let related = PRODUCTS.filter(item => item.tipo === product.tipo && item.id !== product.id);
+  let related = PRODUCTS.filter(
+    (item) => item.tipo === product.tipo && item.id !== product.id,
+  );
 
   if (related.length < 4) {
-    const extras = PRODUCTS
-      .filter(item => item.tipo !== product.tipo && item.id !== product.id)
-      .slice(0, 4 - related.length);
+    const extras = PRODUCTS.filter(
+      (item) => item.tipo !== product.tipo && item.id !== product.id,
+    ).slice(0, 4 - related.length);
 
     related = [...related, ...extras];
   }
@@ -363,22 +722,29 @@ function renderCart() {
       </div>
     `;
   } else {
-    container.innerHTML = entries.map(({ product, qty }) => `
+    container.innerHTML = entries
+      .map(
+        ({ product, qty }) => `
       <div class="cart-item p-3 mb-3">
         <div class="row align-items-center g-3">
-
           <div class="col-12 col-md-3 col-lg-2">
             <div class="cart-product-img-wrap">
               <img src="${product.imagen}" alt="${product.nombre}" class="cart-img">
             </div>
           </div>
+          <<div class="col-12 col-md-5 col-lg-4">
 
-          <div class="col-12 col-md-5 col-lg-4">
-            <h5 class="fw-bold cart-title">${product.nombre}</h5>
-            <span class="badge badge-soft mb-2">${product.tipo} · ${product.categoria}</span>
-            <p class="small text-muted cart-description">${product.descripcion}</p>
-            <p class="price mb-0">${money(product.precio)}</p>
-          </div>
+  <span class="badge badge-soft mb-2">
+    ${product.tipo}
+  </span>
+  <h5 class="fw-bold cart-title mb-2">
+    ${product.nombre}
+  </h5>
+  <p class="price mb-0">
+    ${money(product.precio)}
+  </p>
+
+</div>
 
           <div class="col-12 col-md-4 col-lg-3 cart-actions">
             <small class="fw-semibold d-block mb-2">Cantidad</small>
@@ -400,21 +766,24 @@ function renderCart() {
 
         </div>
       </div>
-    `).join("");
+    `,
+      )
+      .join("");
   }
 
   renderSummary("cartSummary");
   renderSummary("checkoutSummary");
 }
 
-
-
 function renderSummary(targetId) {
   const container = document.getElementById(targetId);
   if (!container) return;
 
   const entries = getCartEntries();
-  const subtotal = entries.reduce((sum, { product, qty }) => sum + (Number(product.precio) * Number(qty)), 0);
+  const subtotal = entries.reduce(
+    (sum, { product, qty }) => sum + Number(product.precio) * Number(qty),
+    0,
+  );
   const tax = Math.round(subtotal * 0.13);
   const shipping = subtotal >= 25000 || subtotal === 0 ? 0 : 1500;
   const total = subtotal + tax + shipping;
@@ -429,10 +798,11 @@ function renderSummary(targetId) {
   const summaryCard = container.closest(".summary-card");
   if (summaryCard) summaryCard.classList.remove("d-none");
 
-  const productRows = entries.map(({ product, qty }) => {
-    const lineTotal = Number(product.precio) * Number(qty);
+  const productRows = entries
+    .map(({ product, qty }) => {
+      const lineTotal = Number(product.precio) * Number(qty);
 
-    return `
+      return `
       <div class="summary-product">
         <div>
           <div class="summary-product-name">${product.nombre}</div>
@@ -441,7 +811,8 @@ function renderSummary(targetId) {
         <div class="summary-product-total">${money(lineTotal)}</div>
       </div>
     `;
-  }).join("");
+    })
+    .join("");
 
   container.innerHTML = `
     <div class="checkout-summary-list">
@@ -458,9 +829,6 @@ function renderSummary(targetId) {
     </div>
   `;
 }
-
-
-
 
 function handleCheckoutSubmit(event) {
   event.preventDefault();
@@ -483,7 +851,9 @@ function confirmCheckout() {
     return;
   }
 
-  const modal = new bootstrap.Modal(document.getElementById("confirmPurchaseModal"));
+  const modal = new bootstrap.Modal(
+    document.getElementById("confirmPurchaseModal"),
+  );
   modal.show();
 }
 
@@ -493,7 +863,11 @@ function finishPurchase() {
 }
 
 function confirmCancel() {
-  if (confirm("¿Está seguro de cancelar la compra? Se conservará el carrito, pero saldrá del formulario.")) {
+  if (
+    confirm(
+      "¿Está seguro de cancelar la compra? Se conservará el carrito, pero saldrá del formulario.",
+    )
+  ) {
     location.href = "carrito.html";
   }
 }
@@ -511,6 +885,9 @@ function showToast(message) {
 document.addEventListener("DOMContentLoaded", () => {
   setCart(getCart()); // Limpia estructuras antiguas guardadas en localStorage
   updateCartCount();
+
+  updateActiveNav();
+
   renderProducts("featuredGrid", PRODUCTS.slice(0, 4));
   renderProductsPage();
   renderDetail();
@@ -518,3 +895,25 @@ document.addEventListener("DOMContentLoaded", () => {
   renderSummary("checkoutSummary");
   renderSummary("cartSummary");
 });
+function updateActiveNav() {
+  const url = new URL(window.location.href);
+  const page = url.pathname.split("/").pop() || "index.html";
+  const categoria = url.searchParams.get("categoria");
+
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.classList.remove("active");
+  });
+
+  if (categoria) {
+    document
+      .querySelector(`.nav-link[href="productos.html?categoria=${categoria}"]`)
+      ?.classList.add("active");
+    return;
+  }
+
+  if (page === "index.html" || page === "") {
+    document
+      .querySelector('.nav-link[href="index.html"]')
+      ?.classList.add("active");
+  }
+}
