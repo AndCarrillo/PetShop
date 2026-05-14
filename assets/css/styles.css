@@ -1,919 +1,1400 @@
-const PRODUCTS = [
-  {
-    id: 1,
-    nombre: "Pedigree res y pollo 4kg",
-    descripcion: "Alimento para perro adulto con proteína y sabor res y pollo.",
-    categoria: "Alimento",
-    tipo: "Perros",
-    precio: 12500,
-    imagen: "assets/img/productos/pedigree4kg.png",
-    atributos: "4 kg | Adulto | Res y pollo",
-  },
-  {
-    id: 2,
-    nombre: "Dog Chow cachorro 2kg",
-    descripcion: "Alimento para cachorros medianos y grandes.",
-    categoria: "Alimento",
-    tipo: "Perros",
-    precio: 9800,
-    imagen: "assets/img/productos/dogchow2kg.png",
-    atributos: "2 kg | Cachorros | Medianos y grandes",
-  },
-  {
-    id: 3,
-    nombre: "Hueso dental",
-    descripcion: "Juguete mordedor para higiene dental canina.",
-    categoria: "Juguetes",
-    tipo: "Perros",
-    precio: 3500,
-    imagen: "assets/img/productos/hueso.png",
-    atributos: "Sabor bacon | 1 unidad | Resistente",
-  },
-  {
-    id: 4,
-    nombre: "Shampoo para mascotas",
-    descripcion: "Shampoo para higiene de mascotas con aloe.",
-    categoria: "Higiene",
-    tipo: "Perros",
-    precio: 4200,
-    imagen: "assets/img/productos/shampoo_canino.png",
-    atributos: "750 ml | Aloe | Uso cosmético",
-  },
-  {
-    id: 5,
-    nombre: "Collar ajustable",
-    descripcion: "Collar ajustable para perro en talla L.",
-    categoria: "Accesorios",
-    tipo: "Perros",
-    precio: 7800,
-    imagen: "assets/img/productos/collar.png",
-    atributos: "Talla L | Azul | Ajustable",
-  },
-  {
-    id: 6,
-    nombre: "Cama ovalada para mascota",
-    descripcion: "Cama acolchada ovalada.",
-    categoria: "Accesorios",
-    tipo: "Perros",
-    precio: 18500,
-    imagen: "assets/img/productos/cama.png",
-    atributos: "Ovalada | 1 unidad | Acolchada",
-  },
-  {
-    id: 7,
-    nombre: "Snacks para perro",
-    descripcion: "Premios tipo jerky sticks.",
-    categoria: "Salud",
-    tipo: "Perros",
-    precio: 3900,
-    imagen: "assets/img/productos/snacks.png",
-    atributos: "232 g | Beef lung | Premios",
-  },
-  {
-    id: 8,
-    nombre: "Juguete para ratones",
-    descripcion: "Juguete para gato con catnip.",
-    categoria: "Juguetes",
-    tipo: "Gatos",
-    precio: 2500,
-    imagen: "assets/img/productos/raton.png",
-    atributos: "3 unidades | Catnip | Felino",
-  },
-  {
-    id: 9,
-    nombre: "Arena cat litter 5kg",
-    descripcion: "Arena para gatos super aglomerante con control de olores.",
-    categoria: "Higiene",
-    tipo: "Gatos",
-    precio: 6900,
-    imagen: "assets/img/productos/arena.png",
-    atributos: "5 kg | Aroma manzana | Aglomerante",
-  },
-  {
-    id: 10,
-    nombre: "Arnés ajustable",
-    descripcion: "Arnés cómodo y resistente para paseo de mascotas.",
-    categoria: "Accesorios",
-    tipo: "Perros",
-    precio: 8500,
-    imagen: "assets/img/productos/arnes.png",
-    atributos: "1 unidad | Ajustable | Negro",
-  },
-  {
-    id: 11,
-    nombre: "Cat Chow adultos 1.5kg",
-    descripcion: "Alimento para gatos adultos sabor pescado.",
-    categoria: "Alimento",
-    tipo: "Gatos",
-    precio: 7200,
-    imagen: "assets/img/productos/catchow.png",
-    atributos: "1.5 kg | Adultos | Pescado",
-  },
-  {
-    id: 12,
-    nombre: "Dispensador de agua 2L",
-    descripcion: "Fuente y dispensador de agua para perros y gatos.",
-    categoria: "Accesorios",
-    tipo: "Gatos",
-    precio: 14500,
-    imagen: "assets/img/productos/fuente.png",
-    atributos: "2 litros | Dispensador | Automático",
-  },
-  {
-    id: 13,
-    nombre: "Rascador para gato",
-    descripcion: "Rascador vertical con juguete colgante.",
-    categoria: "Juguetes",
-    tipo: "Gatos",
-    precio: 11900,
-    imagen: "assets/img/productos/rascador.png",
-    atributos: "1 unidad | Vertical | Felino",
-  },
-  {
-    id: 14,
-    nombre: "Snack para gato",
-    descripcion: "Snack para gato relleno sabor salmón.",
-    categoria: "Salud",
-    tipo: "Gatos",
-    precio: 2800,
-    imagen: "assets/img/productos/snaks_gato.png",
-    atributos: "110 g | Salmón | Snack",
-  },
-  {
-    id: 15,
-    nombre: "Transportadora para mascotas",
-    descripcion: "Transportadora resistente para viajes y veterinaria.",
-    categoria: "Accesorios",
-    tipo: "Gatos",
-    precio: 22500,
-    imagen: "assets/img/productos/transportadora.png",
-    atributos: "11-14 kg | Plástico | Reforzada",
-  },
-  {
-    id: 16,
-    nombre: "Whiskas adulto 500g",
-    descripcion: "Alimento para gato adulto sabor carne.",
-    categoria: "Alimento",
-    tipo: "Gatos",
-    precio: 3200,
-    imagen: "assets/img/productos/whiskas1kg.png",
-    atributos: "500 g | Carne | Adulto",
-  },
-  {
-    id: 17,
-    nombre: "Bebedero Living 125ml",
-    descripcion: "Bebedero para aves pequeñas, útil para agua o semillas.",
-    categoria: "Accesorios",
-    tipo: "Aves",
-    precio: 2600,
-    imagen: "assets/img/productos/bebedero.png",
-    atributos: "125 ml | Aves pequeñas | Plástico",
-  },
-  {
-    id: 18,
-    nombre: "Columpio colorido",
-    descripcion:
-      "Columpio con cadenas y piezas de colores para entretenimiento de aves.",
-    categoria: "Juguetes",
-    tipo: "Aves",
-    precio: 2200,
-    imagen: "assets/img/productos/columpio.png",
-    atributos: "1 unidad | Madera | Colores variados",
-  },
-  {
-    id: 19,
-    nombre: "Jaula mediana",
-    descripcion: "Jaula metálica para aves pequeñas con comederos y percha.",
-    categoria: "Accesorios",
-    tipo: "Aves",
-    precio: 28000,
-    imagen: "assets/img/productos/jaula.jpg",
-    atributos: "Metálica | Incluye accesorios | Tamaño mediano",
-  },
-  {
-    id: 20,
-    nombre: "Semillas para canario 400g",
-    descripcion: "Mezcla de semillas vita para canario.",
-    categoria: "Alimento",
-    tipo: "Aves",
-    precio: 4500,
-    imagen: "assets/img/productos/semillas.png",
-    atributos: "400 g | Canario | Mezcla de semillas",
-  },
-  {
-    id: 21,
-    nombre: "Vitaminas para aves",
-    descripcion: "Suplemento vitamínico para aves de compañía.",
-    categoria: "Salud",
-    tipo: "Aves",
-    precio: 3800,
-    imagen: "assets/img/productos/vitaminas_aves.png",
-    atributos: "30 ml | Suplemento | Uso en aves",
-  },
-  {
-    id: 22,
-    nombre: "Planta para acuario",
-    descripcion: "Decoración tipo coral/planta artificial para peceras.",
-    categoria: "Accesorios",
-    tipo: "Peces",
-    precio: 4800,
-    imagen: "assets/img/productos/coral.png",
-    atributos: "Decoración | Azul | Base incluida",
-  },
-  {
-    id: 23,
-    nombre: "Hojuelas 12g",
-    descripcion: "Alimento en hojuelas para peces tropicales.",
-    categoria: "Alimento",
-    tipo: "Peces",
-    precio: 2800,
-    imagen: "assets/img/productos/escamas.png",
-    atributos: "12 g | Peces tropicales | Hojuelas",
-  },
-  {
-    id: 24,
-    nombre: "Filtro de aire",
-    descripcion: "Bomba de aire silenciosa para acuarios pequeños.",
-    categoria: "Salud",
-    tipo: "Peces",
-    precio: 9500,
-    imagen: "assets/img/productos/filtro.png",
-    atributos: "Hasta 10 galones | Silencioso | Bajo consumo",
-  },
-  {
-    id: 25,
-    nombre: "Luz LED para acuario",
-    descripcion: "Iluminación LED para mejorar la visibilidad del acuario.",
-    categoria: "Accesorios",
-    tipo: "Peces",
-    precio: 12500,
-    imagen: "assets/img/productos/luz_led.png",
-    atributos: "LED azul/blanco | Para pecera | Bajo consumo",
-  },
-  {
-    id: 26,
-    nombre: "Pecera rectangular 20L",
-    descripcion: "Pecera rectangular con tapa para peces pequeños.",
-    categoria: "Accesorios",
-    tipo: "Peces",
-    precio: 32000,
-    imagen: "assets/img/productos/pecera.png",
-    atributos: "20 litros | Rectangular | Vidrio",
-  },
-  {
-    id: 27,
-    nombre: "Viruta para roedores",
-    descripcion:
-      "Viruta absorbente con control de olor para roedores y conejos.",
-    categoria: "Higiene",
-    tipo: "Pequeñas especies",
-    precio: 6900,
-    imagen: "assets/img/productos/viruta.png",
-    atributos: "1 unidad | Control de olor | Absorbente",
-  },
-  {
-    id: 28,
-    nombre: "Rueda para hamster",
-    descripcion:
-      "Rueda de ejercicio silenciosa para hámster y pequeños roedores.",
-    categoria: "Juguetes",
-    tipo: "Pequeñas especies",
-    precio: 5400,
-    imagen: "assets/img/productos/wheel.jpg",
-    atributos: "Azul | Silenciosa | Ejercicio",
-  },
-  {
-    id: 29,
-    nombre: "Bebedero para roedores",
-    descripcion: "Bebedero automático para conejos, cuyos y hurones.",
-    categoria: "Accesorios",
-    tipo: "Pequeñas especies",
-    precio: 4800,
-    imagen: "assets/img/productos/bebedero_roedor.jpg",
-    atributos: "Automático | Azul | Fácil instalación",
-  },
-  {
-    id: 30,
-    nombre: "Alimento para conejos 2kg",
-    descripcion: "Alimento balanceado para conejos domésticos.",
-    categoria: "Alimento",
-    tipo: "Pequeñas especies",
-    precio: 7600,
-    imagen: "assets/img/productos/conejo.png",
-    atributos: "2 kg | Conejos | Balanceado",
-  },
-  {
-    id: 31,
-    nombre: "Jaula para hamster",
-    descripcion: "Jaula completa para hámster con rueda y accesorios.",
-    categoria: "Accesorios",
-    tipo: "Pequeñas especies",
-    precio: 36500,
-    imagen: "assets/img/productos/jaula_hamster.jpg",
-    atributos: "Incluye rueda | Bebedero | Casa",
-  },
-  {
-    id: 32,
-    nombre: "Snack zanahoria",
-    descripcion: "Snack para conejos y pequeños roedores sabor zanahoria.",
-    categoria: "Salud",
-    tipo: "Pequeñas especies",
-    precio: 3500,
-    imagen: "assets/img/productos/snack_zanahoria.jpg",
-    atributos: "9 piezas | Zanahoria | Premio",
-  },
-];
-
-const money = (value) => "₡" + Number(value || 0).toLocaleString("es-CR");
-
-function slugify(value) {
-  return String(value || "")
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/ñ/g, "n")
-    .replace(/\s+/g, "-")
-    .replace(/_/g, "-")
-    .replace(/[^a-z0-9-]/g, "")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "");
+:root {
+  --ali-dark: #342b22;
+  --ali-brown: #806741;
+  --ali-gold: #b79a64;
+  --ali-sand: #efe3cf;
+  --ali-cream: #fbf7ef;
+  --ali-line: #eadfce;
+  --ali-success: #198754;
 }
-
-function normalizeCart(rawCart) {
-  const normalized = {};
-
-  if (!rawCart || typeof rawCart !== "object") return normalized;
-
-  Object.entries(rawCart).forEach(([id, value]) => {
-    let qty = 0;
-
-    if (typeof value === "number") {
-      qty = value;
-    } else if (typeof value === "string") {
-      qty = Number(value);
-    } else if (value && typeof value === "object") {
-      qty = Number(value.qty ?? value.quantity ?? value.cantidad ?? 0);
-    }
-
-    qty = Math.max(0, Math.floor(qty));
-
-    if (qty > 0 && getProduct(id)) {
-      normalized[id] = qty;
-    }
-  });
-
-  return normalized;
+* {
+  box-sizing: border-box;
 }
-
-function getCart() {
-  try {
-    return normalizeCart(
-      JSON.parse(localStorage.getItem("petshop_cart") || "{}"),
-    );
-  } catch {
-    return {};
+body {
+  background: #fff;
+  color: #1f2937;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+.navbar-brand {
+  color: var(--ali-dark);
+}
+a {
+  color: var(--ali-brown);
+}
+.section-space {
+  padding: 2.5rem 0;
+}
+.nav-link {
+  font-weight: 600;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--ali-gold) !important;
+}
+.btn-primary {
+  background: var(--ali-brown);
+  border-color: var(--ali-brown);
+}
+.btn-primary:hover {
+  background: var(--ali-dark);
+  border-color: var(--ali-dark);
+}
+.btn-outline-primary {
+  border-color: var(--ali-brown);
+  color: var(--ali-brown);
+}
+.btn-outline-primary:hover {
+  background: var(--ali-brown);
+  border-color: var(--ali-brown);
+  color: #fff;
+}
+.hero {
+  background: linear-gradient(135deg, var(--ali-cream), #fff);
+  border: 1px solid var(--ali-line);
+}
+.badge-soft {
+  background: var(--ali-cream);
+  color: var(--ali-brown);
+  border: 1px solid var(--ali-line);
+}
+.category-card {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: var(--ali-dark);
+  background: #fff;
+  border: 1px solid var(--ali-line);
+  border-radius: 1rem;
+  padding: 1rem;
+  height: 100%;
+  box-shadow: 0 8px 20px rgba(52, 43, 34, 0.06);
+  transition: 0.2s;
+}
+.category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(52, 43, 34, 0.1);
+  color: var(--ali-brown);
+}
+.category-card img {
+  height: 120px;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+}
+.product-card {
+  border: 1px solid var(--ali-line) !important;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.product-img {
+  height: 210px;
+  object-fit: contain;
+  background: #fff;
+}
+.product-card .card-body {
+  padding: 1rem;
+}
+.price {
+  color: var(--ali-brown);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+.cart-item {
+  border: 1px solid var(--ali-line);
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(52, 43, 34, 0.06);
+}
+.cart-img {
+  width: 170px;
+  height: 135px;
+  object-fit: contain;
+  background: var(--ali-cream);
+  border-radius: 0.75rem;
+}
+.qty-btn {
+  width: 46px;
+  height: 42px;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.qty-value {
+  min-width: 60px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #ced4da;
+  border-bottom: 1px solid #ced4da;
+}
+.delete-btn {
+  font-size: 0.9rem;
+  color: #6c757d;
+  text-decoration: underline;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+.delete-btn:hover {
+  color: #b02a37;
+}
+.summary-card {
+  border: 1px solid var(--ali-line);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(52, 43, 34, 0.08);
+}
+.summary-header,
+.checkout-header {
+  background: var(--ali-brown);
+  color: #fff;
+}
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+.summary-product {
+  border-bottom: 1px dashed var(--ali-line);
+  padding: 0.5rem 0;
+}
+.form-card {
+  border: 1px solid var(--ali-line);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(52, 43, 34, 0.06);
+}
+.form-text {
+  font-size: 0.85rem;
+}
+.pagination .page-link {
+  color: var(--ali-brown);
+}
+.pagination .active .page-link {
+  background: var(--ali-brown);
+  border-color: var(--ali-brown);
+}
+.footer {
+  background: var(--ali-dark);
+}
+.alert-pet {
+  background: var(--ali-cream);
+  border: 1px solid var(--ali-line);
+  color: var(--ali-dark);
+}
+@media (max-width: 768px) {
+  .cart-img {
+    width: 100%;
+    height: 180px;
+  }
+  .cart-item .row {
+    gap: 0.75rem;
+  }
+  .section-space {
+    padding: 1.75rem 0;
   }
 }
 
-function setCart(cart) {
-  localStorage.setItem("petshop_cart", JSON.stringify(normalizeCart(cart)));
-  updateCartCount();
+/* --- Corrección carrito responsive --- */
+.cart-item {
+  overflow: hidden;
 }
 
-function getProduct(id) {
-  return PRODUCTS.find((product) => product.id === Number(id));
+.cart-product-img-wrap {
+  width: 100%;
+  background: var(--ali-cream);
+  border-radius: 0.85rem;
+  border: 1px solid var(--ali-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
 }
 
-function updateCartCount() {
-  const totalItems = Object.values(getCart()).reduce(
-    (sum, qty) => sum + Number(qty),
-    0,
-  );
-  document.querySelectorAll(".cart-count").forEach((el) => {
-    el.textContent = totalItems;
-  });
+.cart-img {
+  width: 100%;
+  max-width: 150px;
+  height: 125px;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+  border-radius: 0.5rem;
 }
 
-function addToCart(id) {
-  const cart = getCart();
-  cart[id] = (cart[id] || 0) + 1;
-  setCart(cart);
-  showToast("Producto agregado correctamente.");
+.cart-title {
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
 }
 
-function changeQty(id, delta) {
-  const cart = getCart();
-  const currentQty = Number(cart[id] || 0);
-  const newQty = currentQty + Number(delta);
-
-  if (newQty <= 0) {
-    delete cart[id];
-  } else {
-    cart[id] = newQty;
-  }
-
-  setCart(cart);
-  renderCart();
+.cart-description {
+  line-height: 1.35;
+  margin-bottom: 0.4rem;
 }
 
-function removeItem(id) {
-  if (!confirm("¿Está seguro de eliminar este producto del carrito?")) return;
-
-  const cart = getCart();
-  delete cart[id];
-  setCart(cart);
-  renderCart();
+.cart-total-price {
+  white-space: nowrap;
 }
 
-function getCartEntries() {
-  const cart = getCart();
-
-  return Object.entries(cart)
-    .map(([id, qty]) => ({
-      product: getProduct(id),
-      qty: Number(qty),
-    }))
-    .filter((item) => item.product && item.qty > 0);
+.cart-actions {
+  min-width: 160px;
 }
 
-function productCard(product) {
-  return `
-    <div class="col-sm-6 col-lg-4 col-xl-3">
-      <article class="card product-card h-100 shadow-sm">
-
-        <img src="${product.imagen}" 
-            alt="${product.nombre}" 
-            class="card-img-top product-img">
-
-        <div class="card-body d-flex flex-column">
-
-          <span class="badge badge-soft align-self-start mb-2">
-            ${product.tipo}
-          </span>
-
-          <h5 class="card-title mb-2">
-            ${product.nombre}
-          </h5>
-
-          <p class="price mb-3">
-            ${money(product.precio)}
-          </p>
-
-          <div class="mt-auto d-flex gap-2">
-            <a class="btn btn-outline-primary btn-sm flex-fill"
-              href="detalle.html?id=${product.id}">
-              Ver detalle
-            </a>
-            <button class="btn btn-primary btn-sm px-3" type="button" onclick="addToCart(${product.id})" 
-            aria-label="Agregar al carrito"title="Agregar al carrito"><i class="bi bi-cart-plus"></i>
-            </button>
-          </div>
-
-        </div>
-      </article>
-    </div>
-  `;
+.summary-product {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px dashed var(--ali-line);
 }
 
-function renderProducts(targetId, products = PRODUCTS) {
-  const container = document.getElementById(targetId);
-  if (!container) return;
-
-  container.innerHTML = products.length
-    ? products.map(productCard).join("")
-    : `<div class="col-12"><div class="alert alert-pet">No se encontraron productos para esta búsqueda.</div></div>`;
+.summary-product-name {
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ali-dark);
 }
 
-function syncSearchFilters({ query, tipo, categoriaProducto, precioMax }) {
-  const qInput = document.getElementById("q");
-  const tipoSelect = document.getElementById("tipo");
-  const categoriaSelect = document.getElementById("categoria");
-  const precioSelect = document.getElementById("precioMax");
-
-  if (qInput) qInput.value = query || "";
-  if (tipoSelect) tipoSelect.value = tipo || "";
-  if (categoriaSelect) categoriaSelect.value = categoriaProducto || "";
-  if (precioSelect) precioSelect.value = precioMax ? String(precioMax) : "";
+.summary-product-meta {
+  font-size: 0.82rem;
+  color: #6c757d;
 }
 
-function renderProductsPage() {
-  const grid = document.getElementById("productsGrid");
-  if (!grid) return;
-
-  const params = new URLSearchParams(location.search);
-  const categoria = params.get("categoria");
-  const tipo = params.get("tipo");
-  const categoriaProducto = params.get("categoriaProducto");
-  const precioMax = Number(params.get("precioMax") || 0);
-  const query = (params.get("q") || "").toLowerCase().trim();
-  const page = Math.max(1, Number(params.get("page") || 1));
-  const perPage = 8;
-
-  let products = [...PRODUCTS];
-
-  if (categoria) {
-    products = products.filter(
-      (product) => slugify(product.tipo) === slugify(categoria),
-    );
-  }
-
-  if (tipo) {
-    products = products.filter(
-      (product) => slugify(product.tipo) === slugify(tipo),
-    );
-  }
-
-  if (categoriaProducto) {
-    products = products.filter(
-      (product) => slugify(product.categoria) === slugify(categoriaProducto),
-    );
-  }
-
-  if (precioMax > 0) {
-    products = products.filter(
-      (product) => Number(product.precio) <= precioMax,
-    );
-  }
-
-  if (query) {
-    products = products.filter((product) =>
-      `${product.nombre} ${product.descripcion} ${product.categoria} ${product.tipo} ${product.atributos}`
-        .toLowerCase()
-        .includes(query),
-    );
-  }
-
-  const totalPages = Math.max(1, Math.ceil(products.length / perPage));
-  const safePage = Math.min(page, totalPages);
-  const start = (safePage - 1) * perPage;
-  const visibleProducts = products.slice(start, start + perPage);
-
-  const title = document.getElementById("pageTitle");
-  if (title) {
-    if (query || tipo || categoriaProducto || precioMax) {
-      title.textContent = "Resultados de búsqueda";
-    } else if (categoria) {
-      title.textContent = `Productos para ${products[0]?.tipo || categoria.replaceAll("-", " ")}`;
-    } else {
-      title.textContent = "Catálogo de productos";
-    }
-  }
-
-  const count = document.getElementById("resultCount");
-  if (count) {
-    count.textContent = `${products.length} producto${products.length === 1 ? "" : "s"}`;
-  }
-
-  syncSearchFilters({ query, tipo, categoriaProducto, precioMax });
-
-  renderProducts("productsGrid", visibleProducts);
-  renderPagination(
-    totalPages,
-    safePage,
-    categoria,
-    query,
-    tipo,
-    categoriaProducto,
-    precioMax,
-  );
+.summary-product-total {
+  font-weight: 800;
+  color: var(--ali-brown);
+  white-space: nowrap;
 }
 
-function renderPagination(
-  totalPages,
-  currentPage,
-  categoria,
-  query,
-  tipo,
-  categoriaProducto,
-  precioMax,
-) {
-  const container = document.getElementById("paginationContainer");
-  if (!container) return;
-
-  if (totalPages <= 1) {
-    container.innerHTML = "";
-    return;
-  }
-
-  const isSearchPage = location.pathname.includes("busqueda");
-  const basePage = isSearchPage ? "busqueda.html" : "productos.html";
-
-  const buildUrl = (page) => {
-    const params = new URLSearchParams();
-
-    if (categoria) params.set("categoria", categoria);
-    if (query) params.set("q", query);
-    if (tipo) params.set("tipo", tipo);
-    if (categoriaProducto) params.set("categoriaProducto", categoriaProducto);
-    if (precioMax) params.set("precioMax", precioMax);
-
-    params.set("page", page);
-
-    return `${basePage}?${params.toString()}`;
-  };
-
-  let items = "";
-
-  for (let i = 1; i <= totalPages; i++) {
-    items += `
-      <li class="page-item ${i === currentPage ? "active" : ""}">
-        <a class="page-link" href="${buildUrl(i)}">${i}</a>
-      </li>
-    `;
-  }
-
-  container.innerHTML = `
-    <nav aria-label="Paginación de productos">
-      <ul class="pagination pagination-sm justify-content-center mb-0">
-        ${items}
-      </ul>
-    </nav>
-  `;
+.summary-totals {
+  margin-top: 0.75rem;
 }
 
-function renderDetail() {
-  const container = document.getElementById("detailContent");
-  if (!container) return;
-
-  const id = new URLSearchParams(location.search).get("id") || 1;
-  const product = getProduct(id) || PRODUCTS[0];
-
-  container.innerHTML = `
-    <div class="row g-4 align-items-center detail-layout">
-
-      <div class="col-12 col-lg-5">
-        <div class="detail-image-box">
-          <img src="${product.imagen}" 
-              class="img-fluid detail-img" 
-              alt="${product.nombre}">
-        </div>
-      </div>
-
-      <div class="col-12 col-lg-7">
-        <span class="badge badge-soft mb-2">
-          ${product.tipo} · ${product.categoria}
-        </span>
-
-        <h1 class="fw-bold detail-title">
-          ${product.nombre}
-        </h1>
-
-        <p class="lead text-muted detail-description">
-          ${product.descripcion}
-        </p>
-
-        <p class="price fs-2">
-          ${money(product.precio)}
-        </p>
-
-        <p class="detail-attributes">
-          <strong>Atributos:</strong> ${product.atributos}
-        </p>
-
-        <div class="detail-actions">
-          <button class="btn btn-primary detail-add-btn" 
-                  onclick="addToCart(${product.id})">
-            <i class="bi bi-cart-plus-fill"></i>
-            Agregar al carrito
-          </button>
-
-          <a class="btn btn-outline-primary detail-back-btn" 
-            href="productos.html">
-            Volver al catálogo
-          </a>
-        </div>
-      </div>
-
-    </div>
-  `;
-
-  let related = PRODUCTS.filter(
-    (item) => item.tipo === product.tipo && item.id !== product.id,
-  );
-
-  if (related.length < 4) {
-    const extras = PRODUCTS.filter(
-      (item) => item.tipo !== product.tipo && item.id !== product.id,
-    ).slice(0, 4 - related.length);
-
-    related = [...related, ...extras];
-  }
-
-  renderProducts("relatedGrid", related.slice(0, 4));
-}
-
-function renderCart() {
-  const container = document.getElementById("cartItems");
-  if (!container) return;
-
-  const entries = getCartEntries();
-
-  const summaryWrapper = document.getElementById("cartSummaryWrapper");
-  if (summaryWrapper) {
-    summaryWrapper.classList.toggle("d-none", !entries.length);
-  }
-
-  if (!entries.length) {
-    container.innerHTML = `
-      <div class="alert alert-pet p-4">
-        <h4 class="fw-bold">Su carrito está vacío</h4>
-        <p class="mb-3">Agregue productos para iniciar la compra.</p>
-        <a href="productos.html" class="btn btn-primary">Ver catálogo</a>
-      </div>
-    `;
-  } else {
-    container.innerHTML = entries
-      .map(
-        ({ product, qty }) => `
-      <div class="cart-item p-3 mb-3">
-        <div class="row align-items-center g-3">
-          <div class="col-12 col-md-3 col-lg-2">
-            <div class="cart-product-img-wrap">
-              <img src="${product.imagen}" alt="${product.nombre}" class="cart-img">
-            </div>
-          </div>
-          <<div class="col-12 col-md-5 col-lg-4">
-
-  <span class="badge badge-soft mb-2">
-    ${product.tipo}
-  </span>
-  <h5 class="fw-bold cart-title mb-2">
-    ${product.nombre}
-  </h5>
-  <p class="price mb-0">
-    ${money(product.precio)}
-  </p>
-
-</div>
-
-          <div class="col-12 col-md-4 col-lg-3 cart-actions">
-            <small class="fw-semibold d-block mb-2">Cantidad</small>
-            <div class="d-inline-flex">
-              <button class="btn btn-outline-secondary qty-btn" onclick="changeQty(${product.id}, -1)" aria-label="Disminuir cantidad">−</button>
-              <span class="qty-value">${qty}</span>
-              <button class="btn btn-outline-secondary qty-btn" onclick="changeQty(${product.id}, 1)" aria-label="Aumentar cantidad">+</button>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-8 col-lg-2 cart-total-block">
-            <small class="fw-semibold d-block mb-1">Precio total</small>
-            <p class="price cart-total-price mb-0">${money(product.precio * qty)}</p>
-          </div>
-
-          <div class="col-12 col-md-4 col-lg-1 text-md-end">
-            <button class="delete-btn" onclick="removeItem(${product.id})">Eliminar</button>
-          </div>
-
-        </div>
-      </div>
-    `,
-      )
-      .join("");
-  }
-
-  renderSummary("cartSummary");
-  renderSummary("checkoutSummary");
-}
-
-function renderSummary(targetId) {
-  const container = document.getElementById(targetId);
-  if (!container) return;
-
-  const entries = getCartEntries();
-  const subtotal = entries.reduce(
-    (sum, { product, qty }) => sum + Number(product.precio) * Number(qty),
-    0,
-  );
-  const tax = Math.round(subtotal * 0.13);
-  const shipping = subtotal >= 25000 || subtotal === 0 ? 0 : 1500;
-  const total = subtotal + tax + shipping;
-
-  if (!entries.length) {
-    container.innerHTML = "";
-    const summaryCard = container.closest(".summary-card");
-    if (summaryCard) summaryCard.classList.add("d-none");
-    return;
-  }
-
-  const summaryCard = container.closest(".summary-card");
-  if (summaryCard) summaryCard.classList.remove("d-none");
-
-  const productRows = entries
-    .map(({ product, qty }) => {
-      const lineTotal = Number(product.precio) * Number(qty);
-
-      return `
-      <div class="summary-product">
-        <div>
-          <div class="summary-product-name">${product.nombre}</div>
-          <div class="summary-product-meta">Cantidad: ${qty} · Unitario: ${money(product.precio)}</div>
-        </div>
-        <div class="summary-product-total">${money(lineTotal)}</div>
-      </div>
-    `;
-    })
-    .join("");
-
-  container.innerHTML = `
-    <div class="checkout-summary-list">
-      <h6 class="fw-bold mb-3">Productos agregados</h6>
-      ${productRows}
-    </div>
-
-    <div class="summary-totals pt-3">
-      <div class="summary-line"><span>Subtotal</span><strong>${money(subtotal)}</strong></div>
-      <div class="summary-line"><span>Impuesto (13%)</span><strong>${money(tax)}</strong></div>
-      <div class="summary-line"><span>Envío</span><strong>${money(shipping)}</strong></div>
-      <hr>
-      <div class="summary-line fs-5"><strong>Total</strong><strong class="text-primary">${money(total)}</strong></div>
-    </div>
-  `;
-}
-
-function handleCheckoutSubmit(event) {
-  event.preventDefault();
-
-  const form = event.target;
-
-  if (!form.checkValidity()) {
-    form.classList.add("was-validated");
-    showToast("Revise los campos marcados antes de continuar.");
-    return;
-  }
-
-  form.classList.add("was-validated");
-  confirmCheckout();
-}
-
-function confirmCheckout() {
-  if (!getCartEntries().length) {
-    alert("Debe agregar productos al carrito antes de comprar.");
-    return;
-  }
-
-  const modal = new bootstrap.Modal(
-    document.getElementById("confirmPurchaseModal"),
-  );
-  modal.show();
-}
-
-function finishPurchase() {
-  localStorage.removeItem("petshop_cart");
-  location.href = "confirmacion.html";
-}
-
-function confirmCancel() {
-  if (
-    confirm(
-      "¿Está seguro de cancelar la compra? Se conservará el carrito, pero saldrá del formulario.",
-    )
-  ) {
-    location.href = "carrito.html";
+@media (max-width: 991.98px) {
+  .summary-card {
+    position: static !important;
   }
 }
 
-function showToast(message) {
-  const toast = document.getElementById("liveToast");
-  const toastMessage = document.getElementById("toastMessage");
-
-  if (!toast || !toastMessage) return;
-
-  toastMessage.textContent = message;
-  bootstrap.Toast.getOrCreateInstance(toast).show();
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  setCart(getCart()); // Limpia estructuras antiguas guardadas en localStorage
-  updateCartCount();
-
-  updateActiveNav();
-
-  renderProducts("featuredGrid", PRODUCTS.slice(0, 4));
-  renderProductsPage();
-  renderDetail();
-  renderCart();
-  renderSummary("checkoutSummary");
-  renderSummary("cartSummary");
-});
-function updateActiveNav() {
-  const url = new URL(window.location.href);
-  const page = url.pathname.split("/").pop() || "index.html";
-  const categoria = url.searchParams.get("categoria");
-
-  document.querySelectorAll(".nav-link").forEach((link) => {
-    link.classList.remove("active");
-  });
-
-  if (categoria) {
-    document
-      .querySelector(`.nav-link[href="productos.html?categoria=${categoria}"]`)
-      ?.classList.add("active");
-    return;
+@media (max-width: 767.98px) {
+  .cart-item {
+    padding: 1rem !important;
   }
 
-  if (page === "index.html" || page === "") {
-    document
-      .querySelector('.nav-link[href="index.html"]')
-      ?.classList.add("active");
+  .cart-product-img-wrap {
+    margin-bottom: 0.75rem;
+  }
+
+  .cart-img {
+    max-width: 190px;
+    height: 160px;
+  }
+
+  .cart-actions {
+    width: 100%;
+  }
+
+  .cart-actions .d-inline-flex {
+    width: 100%;
+  }
+
+  .qty-btn {
+    flex: 0 0 52px;
+  }
+
+  .qty-value {
+    flex: 1;
+  }
+
+  .cart-total-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--ali-line);
+    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .delete-btn {
+    margin-top: 0.75rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .summary-product {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .summary-product-total {
+    align-self: flex-end;
+  }
+}
+
+/* Corrección contador navbar */
+.cart-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.45rem;
+  height: 1.45rem;
+  font-size: 0.72rem;
+  vertical-align: middle;
+  margin-left: 0.25rem;
+}
+
+/* --- Corrección resumen checkout --- */
+.checkout-summary-list {
+  max-height: 420px;
+  overflow: auto;
+  padding-right: 0.25rem;
+}
+
+.checkout-summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed var(--ali-line);
+}
+
+.checkout-summary-img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  background: var(--ali-cream);
+  border: 1px solid var(--ali-line);
+  border-radius: 0.6rem;
+  flex: 0 0 auto;
+}
+
+.checkout-summary-item .summary-product-name {
+  font-size: 0.92rem;
+}
+
+.checkout-summary-item .summary-product-total {
+  font-size: 0.95rem;
+  min-width: 72px;
+  text-align: right;
+}
+
+@media (max-width: 991.98px) {
+  .checkout-summary-list {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .checkout-summary-item {
+    flex-direction: column;
+  }
+
+  .checkout-summary-item .summary-product-total {
+    width: 100%;
+    text-align: right;
+  }
+}
+
+/* --- Checkout mobile optimizado --- */
+.checkout-summary-card {
+  top: 5.25rem;
+}
+
+.checkout-form .form-card {
+  margin-bottom: 1rem;
+}
+
+.checkout-actions {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 991.98px) {
+  .checkout-summary-card {
+    position: static !important;
+  }
+
+  .checkout-summary-card .summary-header,
+  .form-card .checkout-header {
+    padding: 0.85rem 1rem !important;
+  }
+
+  .checkout-summary-card h4,
+  .form-card h4 {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  main.container.section-space {
+    padding-top: 1.25rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .checkout-form .form-card,
+  .checkout-summary-card {
+    border-radius: 0.85rem;
+  }
+
+  .checkout-form label {
+    font-weight: 600;
+  }
+
+  .checkout-form .form-control,
+  .checkout-form .form-select {
+    min-height: 44px;
+  }
+
+  .checkout-actions .btn {
+    width: 100%;
+  }
+
+  .summary-line {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .checkout-summary-list {
+    max-height: none;
+  }
+
+  .checkout-summary-item {
+    padding: 0.65rem 0;
+  }
+
+  .summary-product-name {
+    font-size: 0.9rem;
+  }
+
+  .summary-product-meta {
+    font-size: 0.78rem;
+  }
+
+  .checkout-actions {
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--ali-line);
+    z-index: 10;
+  }
+}
+
+/* --- Ajustes UX V20 --- */
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  margin-top: auto !important;
+}
+
+.hero {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+@media (max-width: 767.98px) {
+  .hero {
+    padding: 1.25rem !important;
+  }
+
+  .hero .display-5 {
+    font-size: 2rem;
+  }
+}
+
+/* --- Mejoras V21: formularios y paginación --- */
+.offer-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--ali-cream);
+  border: 1px solid var(--ali-line);
+  color: var(--ali-dark);
+  padding: 0.65rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+fieldset {
+  margin: 0;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.form-card .form-text {
+  color: #6c757d;
+}
+
+.pagination .page-link {
+  border-color: var(--ali-line);
+}
+
+.pagination .page-item.active .page-link {
+  background: var(--ali-brown);
+  border-color: var(--ali-brown);
+  color: #fff;
+}
+
+.checkout-summary-list {
+  max-height: none;
+  overflow: visible;
+}
+
+.checkout-summary-img {
+  display: none !important;
+}
+
+@media (max-width: 575.98px) {
+  .offer-strip {
+    border-radius: 0.85rem;
+    width: 100%;
+  }
+
+  #paginationContainer .pagination {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+}
+
+/* --- V22: portada y validaciones de formulario --- */
+.hero-image-wrapper {
+  position: relative;
+  background: linear-gradient(135deg, var(--ali-cream), #fff);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-pet-img {
+  max-height: 430px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 28px rgba(52, 43, 34, 0.16));
+}
+
+.was-validated .form-control:invalid,
+.was-validated .form-select:invalid,
+.was-validated .form-check-input:invalid {
+  border-color: #dc3545;
+}
+
+.was-validated .form-control:valid,
+.was-validated .form-select:valid {
+  border-color: #198754;
+}
+
+.checkout-form .invalid-feedback {
+  font-size: 0.82rem;
+}
+
+@media (max-width: 991.98px) {
+  .hero-image-wrapper {
+    min-height: 260px;
+  }
+
+  .hero-pet-img {
+    max-height: 320px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-image-wrapper {
+    min-height: 220px;
+  }
+
+  .hero-pet-img {
+    max-height: 270px;
+  }
+}
+
+/* --- V23: búsqueda y filtros simples --- */
+.search-panel {
+  background: var(--ali-cream);
+  border: 1px solid var(--ali-line);
+}
+
+.search-panel .form-label {
+  font-weight: 700;
+  color: var(--ali-dark);
+}
+
+.search-panel .form-text {
+  font-size: 0.82rem;
+}
+
+#resultCount {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 575.98px) {
+  .search-panel {
+    padding: 1rem !important;
+  }
+
+  .search-panel .btn {
+    width: 100%;
+  }
+}
+
+/* --- V24: filtros minimalistas y responsive --- */
+.search-panel {
+  background: #fff;
+  border: 1px solid var(--ali-line);
+  box-shadow: 0 8px 20px rgba(52, 43, 34, 0.05);
+}
+
+.search-panel .input-group .form-control {
+  min-height: 44px;
+}
+
+.search-panel .btn-primary {
+  min-width: 96px;
+}
+
+.search-panel .form-label {
+  color: var(--ali-dark);
+}
+
+.search-panel .form-select-sm {
+  min-height: 38px;
+}
+
+@media (max-width: 767.98px) {
+  .search-panel .input-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .search-panel .input-group .form-control,
+  .search-panel .input-group .btn {
+    width: 100%;
+    border-radius: 0.5rem !important;
+  }
+
+  .search-panel .btn-primary {
+    min-width: 100%;
+  }
+}
+.category-scroll {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 767.98px) {
+  .category-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.75rem;
+    padding-bottom: 0.75rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .category-scroll .category-card {
+    min-width: 150px;
+    scroll-snap-align: start;
+  }
+
+  .category-scroll::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .category-scroll::-webkit-scrollbar-thumb {
+    background: var(--ali-line);
+    border-radius: 999px;
+  }
+}
+@media (max-width: 767.98px) {
+  .featured-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .featured-scroll > div {
+    min-width: 260px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .featured-scroll::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .featured-scroll::-webkit-scrollbar-thumb {
+    background: var(--ali-line);
+    border-radius: 999px;
+  }
+}
+
+/* --- Navbar responsive corregido --- */
+/* Desktop: mantiene logo, menú, búsqueda y carrito en una sola línea */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-form .me-2 {
+  margin-right: 0 !important;
+}
+
+.cart-link {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Mobile: sin hamburguesa, organizado en 3 líneas */
+@media (max-width: 768px) {
+  header nav > div {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+  }
+
+  .navbar-brand {
+    width: 100%;
+    text-align: left;
+  }
+
+  header .flex-grow-1 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start !important;
+    gap: 0.75rem !important;
+  }
+
+  .navbar-actions {
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .search-form {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex !important;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .search-form input {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .search-form button {
+    flex: 0 0 auto;
+  }
+
+  .cart-link {
+    flex: 0 0 auto;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.25rem;
+    white-space: nowrap;
+  }
+
+  .cart-count {
+    margin-left: 0.2rem;
+  }
+}
+
+/* Ajuste adicional para pantallas muy estrechas */
+@media (max-width: 420px) {
+  .navbar-actions {
+    gap: 0.4rem;
+  }
+
+  .search-form {
+    gap: 0.4rem;
+  }
+
+  .search-form input {
+    font-size: 0.85rem;
+  }
+
+  .search-form button {
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+  }
+
+  .cart-link {
+    font-size: 0.9rem;
+  }
+}
+
+/* --- Ajuste mobile: menú tipo píldora y carrito compacto --- */
+@media (max-width: 768px) {
+  /* Oculta solo el texto "Carrito"; conserva ícono y contador */
+  .cart-text {
+    display: none !important;
+  }
+
+  /* Menú de categorías más separado y con apariencia de navbar */
+  header .flex-grow-1 {
+    justify-content: space-between !important;
+    gap: 0.5rem !important;
+    background: var(--ali-cream);
+    border: 1px solid var(--ali-line);
+    border-radius: 0.85rem;
+    padding: 0.5rem 0.75rem;
+    box-shadow: 0 6px 14px rgba(52, 43, 34, 0.06);
+  }
+
+  header .flex-grow-1 .nav-link {
+    padding: 0.3rem 0.45rem;
+    border-radius: 999px;
+  }
+
+  header .flex-grow-1 .nav-link.active {
+    background: none;
+    box-shadow: none;
+    color: var(--ali-brown) !important;
+    border-bottom: 2px solid var(--ali-gold);
+    border-radius: 0;
+  }
+
+  header .dropdown .btn {
+    border-radius: 999px;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .cart-link {
+    padding: 0.25rem 0.35rem;
+  }
+}
+
+@media (max-width: 420px) {
+  header .flex-grow-1 {
+    font-size: 0.92rem;
+    padding: 0.45rem 0.55rem;
+  }
+
+  header .flex-grow-1 .nav-link {
+    padding: 0.25rem 0.3rem;
+  }
+
+  header .dropdown .btn {
+    font-size: 0.86rem;
+    padding: 0.25rem 0.45rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-text {
+    display: none !important;
+  }
+
+  .navbar-actions {
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .search-form {
+    flex: 1;
+    display: flex !important;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .search-form input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .cart-link {
+    flex-shrink: 0;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.25rem;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 575.98px) {
+  #productsGrid {
+    padding-left: 0.35rem;
+    padding-right: 0.35rem;
+    --bs-gutter-x: 0.75rem;
+    --bs-gutter-y: 1rem;
+  }
+
+  #productsGrid > div {
+    padding-left: 0.45rem;
+    padding-right: 0.45rem;
+  }
+
+  .product-card {
+    border-radius: 0.75rem;
+  }
+}
+/* Tablet: logo arriba, menú y acciones mejor distribuidos */
+@media (min-width: 769px) and (max-width: 991.98px) {
+  header nav > div {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 0.75rem !important;
+  }
+
+  .navbar-brand {
+    width: 100%;
+    text-align: left;
+  }
+
+  header .flex-grow-1 {
+    width: 100%;
+    justify-content: flex-start !important;
+    gap: 1rem !important;
+  }
+
+  .navbar-actions {
+    width: 100%;
+    display: flex !important;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .search-form {
+    flex: 1;
+    max-width: 420px;
+  }
+
+  .cart-link {
+    flex-shrink: 0;
+  }
+}
+/* Tablet grande / iPad Air */
+@media (min-width: 769px) and (max-width: 1180px) {
+  header nav > div {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 0.75rem !important;
+    align-items: start !important;
+  }
+
+  .navbar-brand {
+    width: 100%;
+    text-align: left;
+  }
+
+  header .flex-grow-1 {
+    width: 100%;
+    justify-content: flex-start !important;
+    gap: 1rem !important;
+  }
+
+  .navbar-actions {
+    width: 100%;
+    display: flex !important;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .search-form {
+    flex: 1;
+    max-width: 520px;
+  }
+
+  .search-form input {
+    min-width: 0;
+  }
+
+  .cart-link {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+/* --- Responsive carrito y checkout --- */
+
+/* Tablet grande / iPad */
+@media (min-width: 769px) and (max-width: 1180px) {
+  /* Carrito y checkout pasan a una sola columna */
+  main .row.g-4 > .col-lg-8,
+  main .row.g-4 > .col-lg-4 {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .summary-card {
+    position: static !important;
+    margin-top: 1rem;
+  }
+
+  .checkout-summary-card {
+    position: static !important;
+  }
+
+  .cart-item .row {
+    align-items: center;
+  }
+
+  .cart-product-img-wrap {
+    max-width: 180px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  /* Evita que el resumen se pegue o rompa el layout */
+  .summary-card,
+  .checkout-summary-card {
+    position: static !important;
+    margin-top: 1rem;
+    border-radius: 0.85rem;
+  }
+
+  /* Carrito en formato vertical */
+  .cart-item {
+    padding: 1rem !important;
+  }
+
+  .cart-product-img-wrap {
+    max-width: 180px;
+    margin: 0 auto 0.75rem auto;
+  }
+
+  .cart-img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+  }
+
+  .cart-title {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .cart-description {
+    display: none;
+  }
+
+  .cart-actions {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cart-actions .d-inline-flex {
+    width: 100%;
+  }
+
+  .qty-btn {
+    flex: 0 0 48px;
+    height: 42px;
+  }
+
+  .qty-value {
+    flex: 1;
+  }
+
+  .cart-total-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--ali-line);
+    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .delete-btn {
+    display: block;
+    width: 100%;
+    text-align: right;
+    margin-top: 0.5rem;
+  }
+
+  /* Resumen del pedido más compacto */
+  .summary-header h4,
+  .checkout-header h4 {
+    font-size: 1.05rem;
+  }
+
+  .summary-product {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .summary-product-total {
+    align-self: flex-end;
+  }
+
+  .summary-line {
+    font-size: 0.95rem;
+  }
+
+  .summary-line.fs-5 {
+    font-size: 1.05rem !important;
+  }
+
+  /* Checkout */
+  .checkout-form .form-control,
+  .checkout-form .form-select {
+    min-height: 44px;
+  }
+
+  .checkout-actions {
+    position: static;
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+  }
+
+  .checkout-actions .btn {
+    width: 100%;
+  }
+}
+
+/* Mobile muy pequeño */
+@media (max-width: 420px) {
+  .cart-img {
+    height: 120px;
+  }
+
+  .summary-card .p-3,
+  .form-card .p-3,
+  fieldset.p-3 {
+    padding: 1rem !important;
+  }
+
+  .summary-product-name {
+    font-size: 0.9rem;
+  }
+
+  .summary-product-meta {
+    font-size: 0.78rem;
+  }
+}
+.detail-image-box {
+  border: 1px solid var(--ali-line);
+  border-radius: 0.85rem;
+  padding: 1rem;
+  background: #fff;
+  text-align: center;
+}
+
+.detail-img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.detail-add-btn,
+.detail-back-btn {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+@media (max-width: 767.98px) {
+  .detail-layout {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .detail-image-box {
+    padding: 0.75rem;
+  }
+
+  .detail-img {
+    max-height: 250px;
+  }
+
+  .detail-title {
+    font-size: 1.45rem;
+    line-height: 1.25;
+  }
+
+  .detail-description {
+    font-size: 1rem;
+  }
+
+  .detail-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .detail-actions .btn {
+    width: 100%;
+  }
+}
+/* --- Responsive búsqueda tablet --- */
+
+@media (min-width: 769px) and (max-width: 1180px) {
+  /* Contenedor principal */
+  .search-layout,
+  .filters-layout {
+    gap: 1rem;
+  }
+
+  /* Filtros arriba */
+  .filters-sidebar {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  /* Grid de productos */
+  #searchResults,
+  #productsGrid {
+    width: 100%;
+  }
+
+  /* Cards */
+  .product-card {
+    height: 100%;
+  }
+
+  .product-img {
+    height: 220px;
+    object-fit: contain;
+    padding: 1rem;
+  }
+
+  /* Barra de búsqueda */
+  .search-page-form {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+  }
+
+  .search-page-form input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* Filtros compactos */
+  .filter-card {
+    padding: 1rem;
+  }
+
+  .filter-card .form-select,
+  .filter-card .form-control {
+    min-height: 42px;
+  }
+
+  /* Productos relacionados */
+  .related-products {
+    margin-top: 1.5rem;
+  }
+}
+/* --- iPad Air / tablets grandes --- */
+@media(min-width:820px) and (max-width:1180px){
+
+  /* Layout principal */
+  .search-layout,
+  .filters-layout{
+    display:grid;
+    grid-template-columns:260px 1fr;
+    gap:1.25rem;
+    align-items:start;
+  }
+
+  /* Sidebar filtros */
+  .filters-sidebar{
+    position:sticky;
+    top:110px;
+    margin-bottom:0;
+  }
+
+  /* Grid productos */
+  #searchResults,
+  #productsGrid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1rem;
+  }
+
+  /* Cards */
+  .product-card{
+    height:100%;
+  }
+
+  .product-img{
+    height:220px;
+    object-fit:contain;
+    padding:1rem;
+  }
+
+  /* Buscador */
+  .search-page-form{
+    display:flex;
+    gap:.75rem;
+    width:100%;
+  }
+
+  .search-page-form input{
+    flex:1;
+    min-width:0;
+  }
+
+  /* Filtros */
+  .filter-card{
+    border-radius:.85rem;
+  }
+
+  /* Paginación */
+  .pagination{
+    justify-content:center;
+    flex-wrap:wrap;
   }
 }
