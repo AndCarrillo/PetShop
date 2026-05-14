@@ -517,3 +517,32 @@ fieldset{
     width:100%;
   }
 }
+.category-scroll{
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  gap:1rem;
+}
+
+@media(max-width:767.98px){
+  .category-scroll{
+    display:flex;
+    overflow-x:auto;
+    gap:.75rem;
+    padding-bottom:.75rem;
+    scroll-snap-type:x mandatory;
+  }
+
+  .category-scroll .category-card{
+    min-width:150px;
+    scroll-snap-align:start;
+  }
+
+  .category-scroll::-webkit-scrollbar{
+    height:6px;
+  }
+
+  .category-scroll::-webkit-scrollbar-thumb{
+    background:var(--ali-line);
+    border-radius:999px;
+  }
+}
