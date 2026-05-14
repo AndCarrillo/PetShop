@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,64 +9,82 @@
   <link href="assets/css/styles.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
+
 <body>
 
-<header class="border-bottom bg-white sticky-top shadow-sm">
-  <nav class="container py-2">
-    <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
-      <a class="navbar-brand fw-bold fs-4 text-decoration-none" href="index.html">🐾 PetShop UNA</a>
-      <div class="d-flex align-items-center gap-3 flex-wrap justify-content-center flex-grow-1">
-        <a class="nav-link active fw-semibold" href="index.html">Inicio</a>
-        <a class="nav-link text-dark" href="productos.html?categoria=gatos">Gatos</a>
-        <a class="nav-link text-dark" href="productos.html?categoria=perros">Perros</a>
-        <div class="dropdown">
-          <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">Otras mascotas</button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="productos.html?categoria=aves">Aves</a></li>
-            <li><a class="dropdown-item" href="productos.html?categoria=peces">Peces</a></li>
-            <li><a class="dropdown-item" href="productos.html?categoria=pequenas-especies">Pequeñas especies</a></li>
-          </ul>
+  <header class="border-bottom bg-white sticky-top shadow-sm">
+    <nav class="container py-2">
+      <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+        <a class="navbar-brand fw-bold fs-4 text-decoration-none" href="index.html">🐾 PetShop UNA</a>
+        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-center flex-grow-1">
+          <a class="nav-link active fw-semibold" href="index.html">Inicio</a>
+          <a class="nav-link text-dark" href="productos.html?categoria=gatos">Gatos</a>
+          <a class="nav-link text-dark" href="productos.html?categoria=perros">Perros</a>
+          <div class="dropdown">
+            <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">Otras
+              mascotas</button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="productos.html?categoria=aves">Aves</a></li>
+              <li><a class="dropdown-item" href="productos.html?categoria=peces">Peces</a></li>
+              <li><a class="dropdown-item" href="productos.html?categoria=pequenas-especies">Pequeñas especies</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="navbar-actions">
+          <form action="busqueda.html" method="get" class="search-form">
+            <input class="form-control form-control-sm me-2" name="q" type="search" placeholder="Buscar productos">
+            <button class="btn btn-sm btn-outline-primary">Buscar</button>
+          </form>
+          <a class="nav-link text-dark position-relative cart-link" href="carrito.html">
+            <i class="bi bi-cart3"></i>
+            <span class="cart-text">Carrito</span>
+            <span class="badge rounded-pill bg-danger cart-count">0</span>
+          </a>
         </div>
       </div>
-      <div class="d-flex align-items-center gap-3 flex-wrap">
-        <form action="busqueda.html" method="get" class="d-flex">
-          <input class="form-control form-control-sm me-2" name="q" type="search" placeholder="Buscar productos">
-          <button class="btn btn-sm btn-outline-primary">Buscar</button>
-        </form>
-        <a class="nav-link text-dark position-relative" href="carrito.html">
-          <i class="bi bi-cart3"></i> Carrito <span class="badge rounded-pill bg-danger cart-count">0</span>
-        </a>
+    </nav>
+  </header>
+
+  <main class="container section-space text-center">
+    <div class="alert alert-success p-4 mx-auto" style="max-width:680px">
+      <i class="bi bi-check-circle fs-1"></i>
+      <h1 class="fw-bold mt-2">¡Compra confirmada!</h1>
+      <p class="lead mb-0">Gracias por su compra. Se enviará un correo con los detalles del pedido.</p>
+    </div>
+    <a href="index.html" class="btn btn-primary">Volver al inicio</a>
+  </main>
+
+  <footer class="footer text-white mt-5 py-4">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <h5>PetShop UNA</h5>
+          <p class="text-white-50 mb-0">Todo lo que su mascota necesita, en un solo lugar.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Enlaces</h5><a class="d-block text-white-50" href="productos.html">Productos</a><a
+            class="d-block text-white-50" href="busqueda.html">Buscar</a><a class="d-block text-white-50"
+            href="carrito.html">Carrito</a>
+        </div>
+        <div class="col-md-4">
+          <h5>Contacto</h5>
+          <p class="text-white-50 mb-0">San José, Costa Rica<br>info@petshop.cr<br>+506 2234-5678</p>
+        </div>
       </div>
+      <hr>
+      <p class="text-center text-white-50 mb-0">© 2026 PetShop UNA</p>
     </div>
-  </nav>
-</header>
+  </footer>
 
-<main class="container section-space text-center">
-  <div class="alert alert-success p-4 mx-auto" style="max-width:680px">
-    <i class="bi bi-check-circle fs-1"></i>
-    <h1 class="fw-bold mt-2">¡Compra confirmada!</h1>
-    <p class="lead mb-0">Gracias por su compra. Se enviará un correo con los detalles del pedido.</p>
-  </div>
-  <a href="index.html" class="btn btn-primary">Volver al inicio</a>
-</main>
-
-<footer class="footer text-white mt-5 py-4">
-  <div class="container">
-    <div class="row g-3">
-      <div class="col-md-4"><h5>PetShop UNA</h5><p class="text-white-50 mb-0">Todo lo que su mascota necesita, en un solo lugar.</p></div>
-      <div class="col-md-4"><h5>Enlaces</h5><a class="d-block text-white-50" href="productos.html">Productos</a><a class="d-block text-white-50" href="busqueda.html">Buscar</a><a class="d-block text-white-50" href="carrito.html">Carrito</a></div>
-      <div class="col-md-4"><h5>Contacto</h5><p class="text-white-50 mb-0">San José, Costa Rica<br>info@petshop.cr<br>+506 2234-5678</p></div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert">
+      <div class="toast-header"><strong class="me-auto">PetShop UNA</strong><button type="button" class="btn-close"
+          data-bs-dismiss="toast"></button></div>
+      <div class="toast-body" id="toastMessage">Acción realizada correctamente.</div>
     </div>
-    <hr><p class="text-center text-white-50 mb-0">© 2026 PetShop UNA</p>
   </div>
-</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
 
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
-  <div id="liveToast" class="toast" role="alert">
-    <div class="toast-header"><strong class="me-auto">PetShop UNA</strong><button type="button" class="btn-close" data-bs-dismiss="toast"></button></div>
-    <div class="toast-body" id="toastMessage">Acción realizada correctamente.</div>
-  </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/app.js"></script>
-</body></html>
+</html>
