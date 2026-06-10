@@ -607,7 +607,7 @@ body {
   inset: auto clamp(0.5rem, 1.5vw, 1rem) clamp(0.25rem, 1vw, 0.65rem) auto;
   width: clamp(80px, 12vw, 142px);
   height: clamp(80px, 12vw, 142px);
-  background: url("../img/logo-petshop-una.png") center/contain no-repeat;
+  background: url("../../img/logo-petshop-una.png") center/contain no-repeat;
   opacity: 0.085;
   z-index: 0;
   pointer-events: none;
