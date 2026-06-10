@@ -1,0 +1,617 @@
+/*
+  COMPONENTES: ajustes varios
+  Uso: ajustes visuales consolidados.
+*/
+
+:root {
+  --pet-filter-hover-only-bg: #f3e8d8;
+  --pet-filter-hover-only-text: #3a2a1f;
+  --pet-filter-normal-bg: transparent;
+  --pet-filter-normal-text: #2f241b;
+}
+
+.dropdown-menu {
+  --bs-dropdown-link-hover-bg: var(--pet-filter-hover-only-bg) !important;
+  --bs-dropdown-link-hover-color: var(--pet-filter-hover-only-text) !important;
+  --bs-dropdown-link-active-bg: transparent !important;
+  --bs-dropdown-link-active-color: var(--pet-filter-normal-text) !important;
+}
+
+.dropdown-item,
+.dropdown-item.active,
+.dropdown-item[aria-current="true"],
+.dropdown-item[aria-selected="true"],
+.custom-select-option,
+.custom-select-option.is-selected,
+.custom-select-option[aria-selected="true"] {
+  background: var(--pet-filter-normal-bg) !important;
+  color: var(--pet-filter-normal-text) !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item:focus-visible,
+.dropdown-item:active,
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item:focus-visible,
+.dropdown-menu .dropdown-item:active,
+.custom-select-option:hover,
+.custom-select-option:focus,
+.custom-select-option:focus-visible,
+.custom-select-option:active,
+.custom-select-option.is-highlighted,
+.custom-select-option.is-selected:hover,
+.custom-select-option.is-selected:focus,
+.custom-select-option.is-selected:active,
+.custom-select-option[aria-selected="true"]:hover,
+.custom-select-option[aria-selected="true"]:focus,
+.custom-select-option[aria-selected="true"]:active {
+  background: var(--pet-filter-hover-only-bg) !important;
+  color: var(--pet-filter-hover-only-text) !important;
+}
+
+select option:checked,
+.form-select option:checked,
+.form-select-sm option:checked {
+  background: #ffffff !important;
+  color: var(--pet-filter-normal-text) !important;
+  box-shadow: none !important;
+}
+
+@media (hover: none), (max-width: 991.98px) {
+  .dropdown-item:hover,
+  .dropdown-item:focus,
+  .dropdown-item:active,
+  .custom-select-option:hover,
+  .custom-select-option:focus,
+  .custom-select-option:active,
+  .custom-select-option.is-highlighted {
+    background: var(--pet-filter-hover-only-bg) !important;
+    color: var(--pet-filter-hover-only-text) !important;
+  }
+}
+
+/* ===== Origen: 22-final-visual-polish.css ===== */
+/*
+  Huellita PetShop v34 - Pulido visual y código limpio
+  ------------------------------------------------------------
+  Este módulo final centraliza ajustes de presentación seguros.
+  No cambia IDs, rutas, estructura HTML ni lógica JavaScript.
+*/
+:root {
+  --pet-bg: #faf7f2;
+  --pet-bg-alt: #f5efe6;
+  --pet-surface: #ffffff;
+  --pet-primary: #6b4f32;
+  --pet-primary-dark: #4b3621;
+  --pet-text: #3b2b20;
+  --pet-text-muted: #6f6256;
+  --pet-border: #dccdbd;
+  --pet-hover: #efe4d5;
+  --pet-focus: #b88a5a;
+  --pet-radius-sm: 0.5rem;
+  --pet-radius-md: 0.75rem;
+  --pet-radius-lg: 1rem;
+  --pet-shadow-sm: 0 0.35rem 1rem rgba(75, 54, 33, 0.07);
+  --pet-shadow-md: 0 0.65rem 1.6rem rgba(75, 54, 33, 0.1);
+  --pet-section-y: clamp(2rem, 4vw, 3.5rem);
+}
+
+body {
+  background: var(--pet-bg) !important;
+  color: var(--pet-text) !important;
+}
+
+main {
+  background: transparent;
+}
+
+.section-space,
+section.py-5,
+main.section-space {
+  padding-top: var(--pet-section-y) !important;
+  padding-bottom: var(--pet-section-y) !important;
+}
+
+.container,
+.container-lg,
+.container-xl {
+  --bs-gutter-x: clamp(1rem, 2vw, 2rem);
+}
+
+.hero,
+.search-panel,
+.form-card,
+.summary-card,
+.cart-item,
+.product-card,
+.category-card,
+.need-card,
+.offer-banner,
+.detail-card,
+.detail-image-box {
+  border-color: var(--pet-border) !important;
+  border-radius: var(--pet-radius-lg) !important;
+  box-shadow: var(--pet-shadow-sm) !important;
+}
+
+.hero,
+.search-panel,
+.need-card,
+.alert-pet {
+  background: var(--pet-bg-alt) !important;
+}
+
+.product-card,
+.category-card,
+.form-card,
+.summary-card,
+.cart-item,
+.detail-card,
+.detail-image-box {
+  background: var(--pet-surface) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-title,
+.card-title {
+  color: var(--pet-primary-dark) !important;
+  letter-spacing: -0.015em;
+}
+
+.section-title,
+.home-section-title {
+  margin-bottom: clamp(1rem, 2vw, 1.5rem) !important;
+}
+
+.text-muted,
+.section-subtitle,
+.card-text,
+.product-description,
+.cart-description,
+.detail-description {
+  color: var(--pet-text-muted) !important;
+}
+
+.btn,
+.form-control,
+.form-select,
+.input-group-text {
+  border-radius: var(--pet-radius-md) !important;
+}
+
+.btn-primary,
+.btn-pet,
+.btn-cart,
+.btn-checkout {
+  background-color: var(--pet-primary) !important;
+  border-color: var(--pet-primary) !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-pet:hover,
+.btn-pet:focus,
+.btn-cart:hover,
+.btn-cart:focus,
+.btn-checkout:hover,
+.btn-checkout:focus {
+  background-color: var(--pet-primary-dark) !important;
+  border-color: var(--pet-primary-dark) !important;
+}
+
+.btn-outline-primary,
+.btn-outline-pet {
+  border-color: var(--pet-primary) !important;
+  color: var(--pet-primary) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-pet:hover,
+.btn-outline-pet:focus {
+  background-color: var(--pet-primary) !important;
+  border-color: var(--pet-primary) !important;
+  color: #fff !important;
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.form-control:focus,
+.form-select:focus,
+[tabindex]:focus-visible {
+  outline: 3px solid rgba(184, 138, 90, 0.35) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 0.2rem rgba(184, 138, 90, 0.18) !important;
+  border-color: var(--pet-focus) !important;
+}
+
+.product-card,
+.category-card,
+.need-card,
+.offer-banner {
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.product-card:hover,
+.category-card:hover,
+.need-card:hover,
+.offer-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--pet-shadow-md) !important;
+}
+
+.category-card {
+  min-height: 164px;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.65rem;
+}
+
+.category-card img {
+  width: 86px !important;
+  height: 86px !important;
+  object-fit: contain !important;
+  margin-bottom: 0 !important;
+}
+
+.category-card-title,
+.category-card h3,
+.category-card .h5,
+.category-card span {
+  min-height: 2.4em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.product-img {
+  background: var(--pet-bg) !important;
+}
+
+.price,
+.product-price,
+.cart-total-price,
+.summary-product-total,
+.checkout-summary-item .summary-product-total {
+  color: var(--pet-primary) !important;
+}
+
+.cart-unit-price,
+.unit-price,
+.cart-item-unit-price {
+  color: var(--pet-text-muted) !important;
+  font-size: 0.84rem !important;
+  font-weight: 600 !important;
+}
+
+.cart-total-block {
+  border-color: var(--pet-border) !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus,
+.filter-option:hover,
+.filter-option:focus,
+.custom-filter-option:hover,
+.custom-filter-option:focus {
+  background-color: var(--pet-hover) !important;
+  color: var(--pet-primary-dark) !important;
+}
+
+.dropdown-item.active,
+.dropdown-item:active,
+.filter-option.active,
+.filter-option:active,
+.custom-filter-option.active,
+.custom-filter-option:active {
+  background-color: transparent !important;
+  color: var(--pet-text) !important;
+}
+
+.site-header {
+  border-bottom: 1px solid rgba(220, 205, 189, 0.85) !important;
+}
+
+.site-header .desktop-main-menu .nav-link.active::after,
+.site-header .desktop-main-menu .nav-link:hover::after {
+  background: var(--pet-primary) !important;
+}
+
+.site-footer.footer,
+.site-footer {
+  border-radius: var(--pet-radius-lg) var(--pet-radius-lg) 0 0 !important;
+}
+
+@media (max-width: 991.98px) {
+  :root {
+    --pet-section-y: clamp(1.5rem, 4vw, 2.35rem);
+  }
+
+  .hero,
+  .search-panel,
+  .form-card,
+  .summary-card,
+  .cart-item,
+  .product-card,
+  .category-card,
+  .need-card,
+  .offer-banner,
+  .detail-card,
+  .detail-image-box {
+    border-radius: var(--pet-radius-md) !important;
+  }
+
+  .category-card {
+    min-height: 156px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  :root {
+    --pet-section-y: 1.35rem;
+  }
+
+  .container,
+  .container-lg,
+  .container-xl {
+    --bs-gutter-x: 1rem;
+  }
+
+  .category-card {
+    min-height: 148px;
+    padding: 0.85rem !important;
+  }
+
+  .category-card img {
+    width: 76px !important;
+    height: 76px !important;
+  }
+
+  .category-card-title,
+  .category-card h3,
+  .category-card .h5,
+  .category-card span {
+    font-size: 0.95rem;
+  }
+
+  .cart-item {
+    padding: 0.85rem !important;
+  }
+
+  .section-title,
+  .home-section-title {
+    margin-bottom: 0.85rem !important;
+  }
+}
+
+/* v40 - Checkout limpio e intuitivo
+   El resumen deja de ser un paso del formulario y se compactan espacios
+   sin alterar validaciones, calculos ni comportamiento responsive. */
+.checkout-summary-title {
+  display: block !important;
+}
+
+.checkout-summary-title h2 {
+  font-size: 1.1rem !important;
+}
+
+.checkout-v02-fields {
+  gap: 0.8rem !important;
+}
+
+.checkout-v02-layout {
+  gap: 1.25rem !important;
+}
+
+.checkout-panel {
+  padding: 1rem !important;
+}
+
+.checkout-panel-title {
+  margin-bottom: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+.checkout-panel-title p {
+  font-size: 0.86rem !important;
+}
+
+.checkout-field {
+  margin-bottom: 0.75rem !important;
+}
+
+.checkout-field .form-label {
+  margin-bottom: 0.32rem !important;
+}
+
+.checkout-payment-options,
+.checkout-delivery-options {
+  gap: 0.6rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.checkout-radio-card {
+  padding-top: 0.72rem !important;
+  padding-bottom: 0.72rem !important;
+}
+
+.checkout-summary-panel .checkout-summary-list h6 {
+  margin-bottom: 0.7rem !important;
+}
+
+.checkout-summary-panel .summary-product {
+  padding: 0.55rem 0 !important;
+}
+
+.checkout-summary-panel .summary-totals {
+  padding-top: 0.75rem !important;
+}
+
+.checkout-summary-panel .summary-line {
+  margin-bottom: 0.42rem !important;
+}
+
+.checkout-promo-status {
+  margin-top: 0.55rem !important;
+}
+
+.checkout-terms {
+  margin-top: 0.9rem !important;
+  padding-top: 0.8rem !important;
+}
+
+.checkout-actions-v02 {
+  margin-top: 0.8rem !important;
+}
+
+@media (max-width: 575.98px) {
+  .checkout-panel {
+    padding: 0.9rem !important;
+  }
+
+  .checkout-page-header {
+    margin-bottom: 1rem !important;
+  }
+
+  .checkout-page-header h1 {
+    font-size: 1.85rem !important;
+  }
+
+  .checkout-panel-title {
+    gap: 0.55rem !important;
+  }
+}
+
+/* V41 - Checkout: entrega y pagos mas claros */
+.checkout-option-hint {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  color: var(--color-muted, #7a6a5a);
+}
+
+.checkout-proof-fields {
+  margin-top: 1rem;
+}
+
+.checkout-payment-status {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgba(107, 79, 50, 0.16);
+  border-radius: var(--radius-md, 12px);
+  background: rgba(245, 239, 230, 0.75);
+  color: var(--color-text, #3b2b20);
+  font-size: 0.92rem;
+}
+
+.checkout-payment-status strong {
+  color: var(--color-primary, #6b4f32);
+  text-align: right;
+}
+
+.checkout-promo-status--neutral {
+  background: rgba(245, 239, 230, 0.72);
+  color: var(--color-text, #3b2b20);
+  border-color: rgba(107, 79, 50, 0.14);
+}
+
+@media (max-width: 575.98px) {
+  .checkout-payment-status {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .checkout-payment-status strong {
+    text-align: left;
+  }
+}
+
+/* V45/V46 - Aviso discreto de cobertura de entrega GAM */
+.cart-delivery-note,
+.checkout-gam-note,
+.footer-delivery-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  color: var(--color-muted, #7a6a5a);
+  line-height: 1.35;
+}
+
+.cart-delivery-note {
+  margin-top: 0.85rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(107, 79, 50, 0.14);
+  border-radius: var(--radius-sm, 8px);
+  background: rgba(245, 239, 230, 0.72);
+  font-size: 0.88rem;
+}
+
+.checkout-gam-note {
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+}
+
+.footer-delivery-note {
+  margin: 0.55rem 0 0;
+  max-width: 280px;
+  font-size: 0.84rem;
+}
+
+.cart-delivery-note i,
+.checkout-gam-note i,
+.footer-delivery-note i {
+  color: var(--color-primary, #6b4f32);
+  margin-top: 0.05rem;
+}
+
+@media (max-width: 575.98px) {
+  .cart-delivery-note {
+    font-size: 0.84rem;
+    padding: 0.62rem 0.7rem;
+  }
+}
+
+/* V46 - Footer GAM compacto y responsive */
+.footer-delivery-note {
+  max-width: 100%;
+  font-size: 0.82rem;
+}
+
+.footer-delivery-note span {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 575.98px) {
+  .footer-delivery-note {
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    gap: 0.35rem;
+    margin-top: 0.4rem;
+    text-align: center;
+  }
+
+  .checkout-gam-note {
+    font-size: 0.78rem;
+  }
+}

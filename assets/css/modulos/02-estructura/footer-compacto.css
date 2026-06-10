@@ -1,0 +1,156 @@
+/*
+  ESTRUCTURA: Footer compacto
+  Uso: reduce la altura del pie de página sin eliminar información.
+*/
+
+.site-footer.footer,
+.site-footer.footer.footer-minimal,
+.site-footer {
+  margin-top: clamp(1.5rem, 3vw, 2.5rem) !important;
+  padding: clamp(1rem, 2vw, 1.35rem) 0 0.65rem !important;
+}
+
+.site-footer .footer-minimal-grid,
+.site-footer .footer-container,
+.site-footer .footer-container-slim {
+  gap: clamp(0.65rem, 1.4vw, 1rem) !important;
+  align-items: center !important;
+}
+
+.footer-brand {
+  margin-bottom: 0.25rem !important;
+  line-height: 1.1 !important;
+}
+
+.footer-logo-img {
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0.12rem !important;
+}
+
+.site-footer .footer-title,
+.footer-social-title {
+  margin-bottom: 0.35rem !important;
+  font-size: 0.86rem !important;
+  line-height: 1.15 !important;
+}
+
+.site-footer .footer-text,
+.site-footer .footer-contact-link,
+.site-footer .footer-pills a,
+.site-footer .footer-delivery-note,
+.site-footer .footer-copy {
+  font-size: 0.82rem !important;
+  line-height: 1.25 !important;
+}
+
+.footer-text {
+  max-width: 24ch !important;
+}
+
+.footer-pills {
+  gap: 0.25rem 0.5rem !important;
+  max-width: 360px !important;
+}
+
+.footer-pills a {
+  padding: 0.08rem 0 !important;
+}
+
+.footer-contact-link {
+  gap: 0.35rem !important;
+  margin: 0.06rem 0 !important;
+}
+
+.footer-delivery-note {
+  margin: 0.22rem 0 0 !important;
+  gap: 0.35rem !important;
+  align-items: center !important;
+  max-width: 100% !important;
+}
+
+.footer-social {
+  gap: 0.38rem !important;
+}
+
+.site-footer .social-btn,
+.footer-social .social-btn {
+  width: 32px !important;
+  height: 32px !important;
+  font-size: 0.88rem !important;
+}
+
+.footer-copy {
+  margin-top: 0.65rem !important;
+  padding-top: 0.5rem !important;
+}
+
+@media (max-width: 991.98px) {
+  .site-footer .footer-minimal-grid,
+  .site-footer .footer-container-slim {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.8rem 1rem !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .site-footer.footer,
+  .site-footer.footer.footer-minimal,
+  .site-footer {
+    padding: 0.85rem 0 0.55rem !important;
+  }
+
+  .site-footer .footer-minimal-grid,
+  .site-footer .footer-container,
+  .site-footer .footer-container-slim {
+    grid-template-columns: 1fr !important;
+    gap: 0.55rem !important;
+    text-align: center !important;
+  }
+
+  .footer-about-min,
+  .footer-categories-min,
+  .footer-contact-min,
+  .footer-social-min {
+    display: grid !important;
+    justify-items: center !important;
+    gap: 0.2rem !important;
+  }
+
+  .footer-brand {
+    justify-content: center !important;
+    margin-bottom: 0.12rem !important;
+  }
+
+  .footer-text {
+    max-width: none !important;
+  }
+
+  .footer-pills,
+  .footer-social {
+    justify-content: center !important;
+    margin-inline: auto !important;
+  }
+
+  .footer-pills {
+    gap: 0.18rem 0.45rem !important;
+  }
+
+  .footer-contact-link,
+  .footer-delivery-note {
+    justify-content: center !important;
+    margin-inline: auto !important;
+  }
+
+  .site-footer .social-btn,
+  .footer-social .social-btn {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .footer-copy {
+    margin-top: 0.45rem !important;
+    padding-top: 0.4rem !important;
+    font-size: 0.76rem !important;
+  }
+}

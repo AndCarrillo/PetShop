@@ -1,0 +1,82 @@
+/*
+  COMPONENTE: Marcas de agua
+  Uso: aplica el logo como fondo decorativo sutil en el hero y en las cards de ofertas.
+  Nota: no modifica imágenes originales ni bloquea clics porque usa pointer-events:none.
+*/
+
+:root {
+  --marca-agua-logo: url("../../../img/logo-petshop-una.png");
+  --marca-agua-opacidad-hero: 0.055;
+  --marca-agua-opacidad-oferta: 0.045;
+  --marca-agua-tamano-hero: clamp(12rem, 26vw, 24rem);
+  --marca-agua-tamano-oferta: clamp(7rem, 15vw, 12rem);
+}
+
+.hero,
+.offer-banner {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+}
+
+.hero::after,
+.offer-banner::after {
+  content: "" !important;
+  position: absolute !important;
+  display: block !important;
+  pointer-events: none !important;
+  background-image: var(--marca-agua-logo) !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  filter: saturate(0.7) contrast(0.95) !important;
+  z-index: 0 !important;
+}
+
+.hero::after {
+  width: var(--marca-agua-tamano-hero) !important;
+  height: var(--marca-agua-tamano-hero) !important;
+  right: clamp(-3.5rem, -4vw, -1rem) !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  opacity: var(--marca-agua-opacidad-hero) !important;
+}
+
+.offer-banner::after {
+  width: var(--marca-agua-tamano-oferta) !important;
+  height: var(--marca-agua-tamano-oferta) !important;
+  right: -1.4rem !important;
+  bottom: -1.6rem !important;
+  opacity: var(--marca-agua-opacidad-oferta) !important;
+}
+
+.hero > *,
+.offer-banner > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+@media (max-width: 767.98px) {
+  :root {
+    --marca-agua-opacidad-hero: 0.045;
+    --marca-agua-opacidad-oferta: 0.04;
+    --marca-agua-tamano-hero: clamp(8rem, 42vw, 12rem);
+    --marca-agua-tamano-oferta: clamp(5.75rem, 32vw, 8rem);
+  }
+
+  .hero::after {
+    right: -2.6rem !important;
+    top: 38% !important;
+  }
+
+  .offer-banner::after {
+    right: -1.8rem !important;
+    bottom: -1.8rem !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  :root {
+    --marca-agua-tamano-hero: clamp(10rem, 30vw, 16rem);
+    --marca-agua-tamano-oferta: clamp(6.5rem, 18vw, 9rem);
+  }
+}

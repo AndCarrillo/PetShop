@@ -1,0 +1,439 @@
+/*
+  ESTRUCTURA: menú móvil
+  Uso: offcanvas, distribución del menú lateral y comportamiento responsive.
+*/
+
+@media (max-width: 991.98px) {
+  .petshop-offcanvas.offcanvas-start {
+    top: var(--site-header-height, 132px) !important;
+    height: calc(100dvh - var(--site-header-height, 132px)) !important;
+    max-height: calc(100dvh - var(--site-header-height, 132px)) !important;
+    width: min(78vw, 292px) !important;
+    max-width: calc(100vw - 3.75rem) !important;
+    border-top: 1px solid var(--pet-line, #eadcc9) !important;
+    border-right: 1px solid rgba(58, 42, 31, 0.18) !important;
+    border-radius: 0 !important;
+    box-shadow: 10px 18px 30px rgba(58, 42, 31, 0.16) !important;
+    background: #fffdf9 !important;
+    overflow: hidden !important;
+  }
+
+  .offcanvas-backdrop {
+    top: var(--site-header-height, 132px) !important;
+    height: calc(100dvh - var(--site-header-height, 132px)) !important;
+  }
+
+  .petshop-offcanvas .offcanvas-header,
+  .petshop-offcanvas .menu-search-form,
+  .petshop-offcanvas .menu-min-home {
+    display: none !important;
+  }
+
+  .petshop-offcanvas .offcanvas-body {
+    height: 100% !important;
+    max-height: 100% !important;
+    padding: 0.75rem 0.9rem 1rem !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .petshop-offcanvas .menu-min-nav {
+    padding-top: 0.15rem !important;
+  }
+
+  .petshop-offcanvas .menu-min-link,
+  .petshop-offcanvas .menu-min-toggle {
+    min-height: 44px !important;
+    padding: 0.72rem 0.25rem !important;
+    border-bottom: 1px solid #eadcc9 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: var(--pet-text, #2f2118) !important;
+    font-weight: 800 !important;
+  }
+
+  .petshop-offcanvas .menu-min-link:hover,
+  .petshop-offcanvas .menu-min-link:focus,
+  .petshop-offcanvas .menu-min-toggle:hover,
+  .petshop-offcanvas .menu-min-toggle:focus {
+    background: #fff7ee !important;
+    color: var(--pet-primary, #5b3b20) !important;
+  }
+
+  .petshop-offcanvas .menu-close-floating {
+    position: sticky;
+    top: 0;
+    float: right;
+    z-index: 2;
+    width: 2rem;
+    height: 2rem;
+    min-width: 2rem;
+    min-height: 2rem;
+    margin: 0 0 0.25rem 0.5rem;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.55rem;
+    border: 1px solid #eadcc9;
+    background: #fffaf4;
+    color: var(--pet-primary, #5b3b20);
+  }
+
+  .petshop-offcanvas .menu-social-links {
+    margin-top: 1.15rem !important;
+    padding-top: 1rem !important;
+    border-top: 1px solid #eadcc9 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .petshop-offcanvas.offcanvas-start {
+    width: min(82vw, 286px) !important;
+    max-width: calc(100vw - 3rem) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .petshop-offcanvas.offcanvas-start {
+    width: 320px !important;
+    max-width: 320px !important;
+  }
+}
+
+/* ===== Origen: 11-checkout-menu-enhancements.css ===== */
+/* Huellita PetShop checkout/menu - Checkout y menú lateral refinados */
+@media (max-width: 991.98px) {
+  .petshop-offcanvas.petshop-menu-min.offcanvas-start {
+    top: var(--site-header-height, 132px) !important;
+    height: calc(100dvh - var(--site-header-height, 132px)) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: #fffdf9 !important;
+  }
+
+  .petshop-menu-min .menu-min-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    min-height: 3.15rem !important;
+    padding: 0.65rem 0.9rem !important;
+    border-bottom: 1px solid #eadcc9 !important;
+    background: #fffaf4 !important;
+    color: var(--pet-text, #2f2118) !important;
+  }
+
+  .petshop-menu-min .menu-min-header .offcanvas-title {
+    color: var(--pet-text, #2f2118) !important;
+    font-size: 0.95rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.01em !important;
+  }
+
+  .petshop-menu-min .menu-close-btn {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    min-width: 2.25rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 0.65rem !important;
+    border: 1px solid #eadcc9 !important;
+    background: #fff !important;
+    color: var(--pet-primary, #5b3b20) !important;
+  }
+
+  .petshop-menu-min .menu-close-floating {
+    display: none !important;
+  }
+
+  .petshop-menu-min .offcanvas-body.menu-min-body {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .petshop-menu-min .menu-min-nav {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0.25rem 0.9rem 0.9rem !important;
+  }
+
+  .petshop-menu-min .menu-min-primary {
+    flex: 0 0 auto !important;
+  }
+
+  .petshop-menu-min .menu-min-link,
+  .petshop-menu-min .menu-min-toggle {
+    min-height: 2.85rem !important;
+    padding: 0.8rem 0.35rem !important;
+  }
+
+  .petshop-menu-min .menu-social-links {
+    margin-top: 1.2rem !important;
+    padding-top: 0.85rem !important;
+    padding-bottom: 0.15rem !important;
+    border-top: 1px solid #eadcc9 !important;
+  }
+
+  .petshop-menu-min .menu-social-title {
+    display: block !important;
+    margin-bottom: 0.75rem !important;
+    color: var(--pet-text, #2f2118) !important;
+    font-size: 0.75rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  .petshop-menu-min .menu-social-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+  }
+
+  .petshop-menu-min .menu-social-actions a {
+    width: 2.1rem !important;
+    height: 2.1rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid #eadcc9 !important;
+    border-radius: 50% !important;
+    color: var(--pet-primary, #5b3b20) !important;
+    background: #fff !important;
+    text-decoration: none !important;
+  }
+}
+
+.checkout-guest-note,
+.checkout-delivery-note,
+.checkout-payment-note {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  max-width: 46rem;
+  margin-top: 0.85rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #eadfcf;
+  border-radius: 0.75rem;
+  background: #fffaf4;
+  color: #4b3621;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.checkout-delivery-note,
+.checkout-payment-note {
+  width: 100%;
+  margin: 0 0 1rem;
+}
+
+.checkout-delivery-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 0;
+}
+
+.checkout-v02-layout {
+  gap: 1.4rem !important;
+}
+
+.checkout-v02-fields {
+  gap: 0.85rem !important;
+}
+
+.checkout-panel {
+  padding: 1.05rem !important;
+}
+
+.checkout-panel-title {
+  margin-bottom: 0.85rem !important;
+  padding-bottom: 0.85rem !important;
+}
+
+.checkout-field {
+  margin-bottom: 0.85rem !important;
+}
+
+.checkout-card-fields.d-none,
+.checkout-delivery-fields.d-none,
+.checkout-payment-note.d-none,
+.checkout-delivery-note.d-none {
+  display: none !important;
+}
+
+@media (min-width: 992px) {
+  .checkout-v02-summary {
+    top: calc(var(--site-header-height, 112px) + 1rem) !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .checkout-guest-note,
+  .checkout-delivery-note,
+  .checkout-payment-note {
+    font-size: 0.86rem;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .checkout-delivery-options,
+  .checkout-payment-options {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ===== Origen: 12-mobile-menu-distribution.css ===== */
+/* Huellita PetShop mobile menu - Distribución del menú lateral móvil/tablet */
+@media (max-width: 991.98px) {
+  .site-header .btn-bento-menu {
+    transition:
+      background-color 0.18s ease,
+      border-color 0.18s ease,
+      color 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  .site-header .btn-bento-menu.is-menu-open {
+    background: #3a2a1f !important;
+    border-color: #3a2a1f !important;
+    color: #fff !important;
+  }
+
+  .site-header .btn-bento-menu.is-menu-open i {
+    font-size: 1.05rem !important;
+    line-height: 1 !important;
+  }
+
+  .petshop-offcanvas.petshop-menu-min.offcanvas-start {
+    top: var(--site-header-height, 132px) !important;
+    height: calc(100dvh - var(--site-header-height, 132px)) !important;
+    max-height: calc(100dvh - var(--site-header-height, 132px)) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  .petshop-menu-min .menu-min-header {
+    display: none !important;
+  }
+
+  .petshop-menu-min .offcanvas-body.menu-min-body {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    padding: 0 !important;
+  }
+
+  .petshop-menu-min .menu-min-nav {
+    min-height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0.4rem 0.85rem 0.85rem !important;
+  }
+
+  .petshop-menu-min .menu-min-primary {
+    flex: 0 0 auto !important;
+  }
+
+  .petshop-menu-min .menu-min-link,
+  .petshop-menu-min .menu-min-toggle {
+    min-height: 2.75rem !important;
+    padding: 0.75rem 0.3rem !important;
+  }
+
+  .petshop-menu-min .menu-social-links {
+    margin-top: auto !important;
+    padding-top: 1.1rem !important;
+    padding-bottom: 0.15rem !important;
+    border-top: 1px solid #eadcc9 !important;
+  }
+
+  .petshop-menu-min .menu-social-title {
+    margin-bottom: 0.8rem !important;
+  }
+}
+
+@media (max-height: 620px) and (max-width: 991.98px) {
+  .petshop-menu-min .menu-social-links {
+    margin-top: 1rem !important;
+  }
+}
+
+/* =====================================================
+   MENÚ LATERAL: redes independientes del footer
+   Uso: evita que .footer-social o .social-btn afecten el offcanvas.
+   ===================================================== */
+@media (max-width: 991.98px) {
+  .petshop-menu-min .menu-lateral-redes {
+    margin-top: auto !important;
+    padding-top: 1rem !important;
+    padding-bottom: 0.25rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 0.65rem !important;
+    border-top: 1px solid #eadcc9 !important;
+  }
+
+  .petshop-menu-min .menu-lateral-redes-acciones {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    flex-wrap: wrap !important;
+  }
+
+  .petshop-menu-min .menu-lateral-red-social {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    display: grid !important;
+    place-items: center !important;
+    border-radius: 50% !important;
+    color: var(--color-primario, var(--pet-primary, #5b3b20)) !important;
+    background: rgba(255, 255, 255, 0.78) !important;
+    border: 1px solid rgba(234, 220, 201, 0.95) !important;
+    box-shadow: 0 6px 14px rgba(91, 59, 32, 0.08) !important;
+    text-decoration: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .petshop-menu-min .menu-lateral-red-social i {
+    font-size: 1.08rem !important;
+    line-height: 1 !important;
+  }
+
+  .petshop-menu-min .menu-lateral-red-social:hover,
+  .petshop-menu-min .menu-lateral-red-social:focus-visible {
+    background: #efe4d5 !important;
+    color: #4b3621 !important;
+    border-color: #d8c4ad !important;
+    outline: 2px solid rgba(184, 138, 90, 0.35) !important;
+    outline-offset: 2px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .petshop-menu-min .menu-lateral-redes {
+    padding-top: 0.75rem !important;
+    gap: 0.45rem !important;
+  }
+
+  .petshop-menu-min .menu-lateral-redes-titulo {
+    display: none !important;
+  }
+}
+
+@media (max-height: 620px) and (max-width: 991.98px) {
+  .petshop-menu-min .menu-lateral-redes {
+    margin-top: 0.85rem !important;
+  }
+}

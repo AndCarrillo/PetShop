@@ -1,0 +1,56 @@
+/*
+  ESTRUCTURA: espaciado superior de páginas internas
+  Uso: acerca el contenido al navbar sin modificar index, hero ni ancho general.
+*/
+
+.pagina-interna.section-space {
+  padding-top: clamp(0.85rem, 1.6vw, 1.35rem) !important;
+  padding-bottom: clamp(1.5rem, 2.6vw, 2.25rem) !important;
+}
+
+.pagina-interna .encabezado-pagina {
+  padding-inline: clamp(0.35rem, 1.2vw, 0.85rem);
+}
+
+.pagina-interna .encabezado-pagina h1 {
+  margin-bottom: 0.25rem;
+}
+
+.pagina-interna .encabezado-pagina p {
+  margin-bottom: 0;
+}
+
+.pagina-interna .checkout-mini-breadcrumb.encabezado-pagina {
+  margin-bottom: 0.65rem !important;
+  font-size: 0.9rem;
+}
+
+.pagina-interna .checkout-page-header.encabezado-pagina {
+  margin-bottom: 1rem !important;
+}
+
+.pagina-interna .detail-return-nav {
+  margin-top: 0 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+@media (max-width: 991.98px) {
+  .pagina-interna.section-space {
+    padding-top: clamp(0.65rem, 2.2vw, 1rem) !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .pagina-interna .encabezado-pagina {
+    padding-inline: clamp(0.5rem, 3vw, 0.9rem);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .pagina-interna.section-space {
+    padding-top: 0.55rem !important;
+  }
+
+  .pagina-interna .encabezado-pagina {
+    padding-inline: 0.7rem;
+  }
+}

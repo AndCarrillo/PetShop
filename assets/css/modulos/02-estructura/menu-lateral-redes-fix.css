@@ -1,0 +1,121 @@
+/*
+  MENÚ LATERAL: visibilidad de redes sociales
+  Uso: separa definitivamente los estilos de redes del footer y asegura
+  que los iconos sean visibles en móviles y tablets dentro del offcanvas.
+*/
+
+@media (max-width: 991.98px) {
+  .petshop-menu-min.offcanvas-start {
+    overflow: hidden !important;
+  }
+
+  .petshop-menu-min .offcanvas-body.menu-min-body {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    padding: 0 !important;
+  }
+
+  .petshop-menu-min .menu-min-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100% !important;
+    padding: 0.35rem 0.85rem 0 !important;
+  }
+
+  .petshop-menu-min .menu-min-primary {
+    flex: 0 0 auto !important;
+  }
+
+  .petshop-menu-min .menu-lateral-redes {
+    position: sticky !important;
+    bottom: 0 !important;
+    z-index: 2 !important;
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+    padding: 0.7rem 0 calc(0.8rem + env(safe-area-inset-bottom, 0px)) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    flex-shrink: 0 !important;
+    border-top: 1px solid #eadcc9 !important;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.92),
+      #fff 42%
+    ) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .petshop-menu-min .menu-lateral-redes-titulo,
+  .petshop-menu-min .menu-social-title {
+    display: none !important;
+  }
+
+  .petshop-menu-min .menu-lateral-redes-acciones,
+  .petshop-menu-min .menu-social-actions {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.7rem !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+  }
+
+  .petshop-menu-min .menu-lateral-red-social,
+  .petshop-menu-min .menu-social-actions a.menu-lateral-red-social {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    display: grid !important;
+    place-items: center !important;
+    border-radius: 50% !important;
+    color: var(--color-primario, var(--pet-primary, #5b3b20)) !important;
+    background: #fff !important;
+    border: 1px solid rgba(234, 220, 201, 0.98) !important;
+    box-shadow: 0 6px 14px rgba(91, 59, 32, 0.08) !important;
+    text-decoration: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .petshop-menu-min .menu-lateral-red-social i {
+    display: inline-block !important;
+    font-size: 1.05rem !important;
+    line-height: 1 !important;
+  }
+
+  .petshop-menu-min .menu-lateral-red-social:hover,
+  .petshop-menu-min .menu-lateral-red-social:focus-visible {
+    background: #efe4d5 !important;
+    color: #4b3621 !important;
+    border-color: #d8c4ad !important;
+    outline: 2px solid rgba(184, 138, 90, 0.35) !important;
+    outline-offset: 2px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .petshop-menu-min .menu-min-link,
+  .petshop-menu-min .menu-min-toggle {
+    min-height: 2.55rem !important;
+    padding-block: 0.68rem !important;
+  }
+
+  .petshop-menu-min .menu-lateral-redes {
+    padding-top: 0.55rem !important;
+  }
+
+  .petshop-menu-min .menu-lateral-red-social {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
+  }
+}

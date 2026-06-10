@@ -1,0 +1,51 @@
+/*
+  BASE: accesibilidad y estabilidad
+  Uso: foco visible, prevención de desbordes y comportamiento táctil.
+*/
+
+:root {
+  /* Alias semanticos para evitar nuevos valores sueltos en futuras mejoras */
+  --color-brand: var(--ali-brown);
+  --color-brand-dark: var(--ali-dark);
+  --color-surface: #fff;
+  --color-surface-soft: var(--ali-cream);
+  --color-border: var(--ali-line);
+  --radius-control: 0.75rem;
+  --radius-card: 0.85rem;
+  --shadow-soft: 0 8px 20px rgba(52, 43, 34, 0.06);
+  --shadow-lift: 0 12px 24px rgba(52, 43, 34, 0.1);
+}
+
+/* Accesibilidad: foco visible consistente para teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.btn:focus-visible,
+.form-control:focus-visible,
+.form-select:focus-visible {
+  outline: 3px solid rgba(138, 106, 50, 0.38);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+/* Evita saltos visuales al navegar a anclas con navbar fija */
+[id] {
+  scroll-margin-top: calc(var(--site-header-height, 120px) + 1rem);
+}
+
+/* Previene desbordes horizontales accidentales por imagenes o cards */
+img,
+svg {
+  max-width: 100%;
+}
+
+/* Mantiene la experiencia tactil sin cambiar tamaños visuales existentes */
+button,
+.btn,
+a.nav-icon-link,
+.btn-bento-menu,
+.menu-min-link {
+  touch-action: manipulation;
+}

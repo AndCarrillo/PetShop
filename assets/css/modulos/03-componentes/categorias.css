@@ -1,0 +1,70 @@
+/*
+  COMPONENTES: categorías
+  Uso: cards de categorías y equilibrio responsive.
+*/
+
+.category-scroll .category-card {
+  height: clamp(150px, 22vw, 184px) !important;
+  min-height: clamp(150px, 22vw, 184px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.65rem !important;
+  padding: 1rem 0.85rem !important;
+  text-align: center !important;
+}
+
+.category-scroll .category-card img {
+  width: min(92px, 68%) !important;
+  height: clamp(72px, 13vw, 104px) !important;
+  max-height: 104px !important;
+  margin: 0 !important;
+  padding: 0.25rem !important;
+  object-fit: contain !important;
+  flex: 0 0 auto !important;
+}
+
+.category-scroll .category-card > span {
+  min-height: 2.4em !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+  font-weight: 800 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+@media (max-width: 575.98px) {
+  .category-scroll .category-card {
+    flex: 0 0 148px !important;
+    min-width: 148px !important;
+    height: 164px !important;
+    min-height: 164px !important;
+  }
+
+  .category-scroll .category-card img {
+    width: 82px !important;
+    height: 82px !important;
+  }
+
+  .category-scroll .category-card > span {
+    font-size: 0.96rem !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .category-scroll .category-card {
+    height: 174px !important;
+    min-height: 174px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .category-scroll .category-card {
+    height: 184px !important;
+    min-height: 184px !important;
+  }
+}
