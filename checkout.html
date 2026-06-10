@@ -4,246 +4,229 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Checkout | PetShop UNA</title>
+  <title>Checkout | Huellita PetShop</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/css/styles.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/img/favicon-petshop.png">
 </head>
 
-<body>
-
-  <header class="border-bottom bg-white sticky-top shadow-sm">
-    <nav class="container py-2">
-      <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
-        <a class="navbar-brand fw-bold fs-4 text-decoration-none" href="index.html">🐾 PetShop UNA</a>
-        <div class="d-flex align-items-center gap-3 flex-wrap justify-content-center flex-grow-1">
-          <a class="nav-link active fw-semibold" href="index.html">Inicio</a>
-          <a class="nav-link text-dark" href="productos.html?categoria=gatos">Gatos</a>
-          <a class="nav-link text-dark" href="productos.html?categoria=perros">Perros</a>
-          <div class="dropdown">
-            <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">Otras
-              mascotas</button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="productos.html?categoria=aves">Aves</a></li>
-              <li><a class="dropdown-item" href="productos.html?categoria=peces">Peces</a></li>
-              <li><a class="dropdown-item" href="productos.html?categoria=pequenas-especies">Pequeñas especies</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="navbar-actions">
-          <form action="busqueda.html" method="get" class="search-form">
-            <input class="form-control form-control-sm me-2" name="q" type="search" placeholder="Buscar productos">
-            <button class="btn btn-sm btn-outline-primary">Buscar</button>
-          </form>
-          <a class="nav-link text-dark position-relative cart-link" href="carrito.html">
-            <i class="bi bi-cart3"></i>
-            <span class="cart-text">Carrito</span>
-            <span class="badge rounded-pill bg-danger cart-count">0</span>
-          </a>
-        </div>
-      </div>
+<body class="pagina-interna">
+    <!-- Página: checkout.html -->
+  <div data-component="site-header"></div>
+  <main class="container section-space checkout-v02-page">
+    <nav aria-label="Ruta de compra" class="checkout-mini-breadcrumb mb-3">
+      <a href="index.html">Inicio</a><span aria-hidden="true">›</span>
+      <a href="carrito.html">Carrito</a><span aria-hidden="true">›</span>
+      <strong>Finalizar compra</strong>
     </nav>
-  </header>
-
-  <main class="container section-space">
-    <div class="mb-3">
-      <h1 class="fw-bold mb-1">Finalizar compra</h1>
-      <p class="text-muted mb-0">Complete la información de entrega y pago para continuar. Este formulario solicita
-        únicamente los datos necesarios para procesar el pedido.</p>
-    </div>
-    <div class="row g-4 align-items-start">
-
-      <!-- Resumen de compra: en móvil aparece primero -->
-      <aside class="col-lg-4 order-1 order-lg-2">
-        <div class="summary-card checkout-summary-card sticky-lg-top">
-          <div class="summary-header p-3">
-            <h4 class="mb-0">Resumen de compra</h4>
-          </div>
-          <div class="p-3" id="checkoutSummary"></div>
-        </div>
-      </aside>
-
-      <!-- Formulario: en móvil aparece después del resumen -->
-      <div class="col-lg-8 order-2 order-lg-1">
-        <form class="needs-validation checkout-form" novalidate onsubmit="handleCheckoutSubmit(event);">
-
-          <div class="form-card mb-3">
-            <div class="checkout-header p-3">
-              <h4 class="mb-0">Datos personales y entrega</h4>
+    <header class="checkout-page-header mb-4 encabezado-pagina">
+      <h1>Finalizar compra</h1>
+      <p>Completá solo los datos necesarios para preparar tu pedido.</p>
+    </header>
+    <form class="checkout-form checkout-v02-form needs-validation" id="checkoutForm" novalidate="">
+      <div class="checkout-v02-layout">
+        <div class="checkout-v02-fields">
+          <section aria-labelledby="contactoTitle" class="checkout-panel">
+            <div class="checkout-panel-title">
+              <span class="checkout-step">1</span>
+              <div>
+                <h2 id="contactoTitle">Contacto</h2>
+                <p>Datos para confirmar el pedido.</p>
+              </div>
             </div>
-
-            <fieldset class="p-3">
-              <legend class="visually-hidden">Datos personales y entrega</legend>
-              <div class="row g-3">
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Nombre completo *</label>
-                  <input class="form-control" type="text" minlength="5" maxlength="80" autocomplete="name" required>
-                  <div class="form-text">Ingrese nombre y apellido.</div>
-                  <div class="invalid-feedback">Ingrese su nombre completo.</div>
-                </div>
-
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Teléfono *</label>
-                  <input class="form-control" type="tel" inputmode="numeric" pattern="[0-9]{8}" maxlength="8"
-                    placeholder="88889999" autocomplete="tel" required>
-                  <div class="form-text">Use 8 dígitos, sin guiones ni espacios.</div>
-                  <div class="invalid-feedback">Ingrese un teléfono válido de 8 dígitos.</div>
-                </div>
-
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Correo electrónico *</label>
-                  <input class="form-control" type="email" maxlength="100" placeholder="correo@ejemplo.com"
-                    autocomplete="email" required>
-                  <div class="form-text">Se enviará la confirmación del pedido.</div>
-                  <div class="invalid-feedback">Ingrese un correo electrónico válido.</div>
-                </div>
-
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Provincia *</label>
-                  <select class="form-select" autocomplete="address-level1" required>
-                    <option value="">Seleccione</option>
-                    <option>San José</option>
-                    <option>Alajuela</option>
-                    <option>Cartago</option>
-                    <option>Heredia</option>
-                    <option>Guanacaste</option>
-                    <option>Puntarenas</option>
-                    <option>Limón</option>
-                  </select>
-                  <div class="invalid-feedback">Seleccione una provincia.</div>
-                </div>
-
-                <div class="col-12">
-                  <label class="form-label">Dirección exacta *</label>
-                  <textarea class="form-control" rows="2" minlength="10" maxlength="180" autocomplete="street-address"
-                    required></textarea>
-                  <div class="form-text">Incluya señas para facilitar la entrega. Mínimo 10 caracteres.</div>
-                  <div class="invalid-feedback">Ingrese una dirección más específica.</div>
-                </div>
+            <div class="checkout-field">
+              <label class="form-label" for="nombreCompleto">Nombre completo *</label>
+              <input autocomplete="name" class="form-control" id="nombreCompleto" maxlength="80" minlength="5"
+                name="nombreCompleto" placeholder="Nombre y apellido" required="" type="text" />
+              <div class="invalid-feedback">Ingrese su nombre completo.</div>
+            </div>
+            <div class="checkout-field">
+              <label class="form-label" for="correo">Correo electrónico *</label>
+              <input autocomplete="email" class="form-control" id="correo" maxlength="100" name="correo"
+                placeholder="correo@ejemplo.com" required="" type="email" />
+              <div class="invalid-feedback">Ingrese un correo electrónico válido.</div>
+            </div>
+            <div class="checkout-field">
+              <label class="form-label" for="telefono">Teléfono *</label>
+              <input autocomplete="tel" class="form-control" id="telefono" inputmode="numeric" maxlength="8"
+                name="telefono" pattern="[0-9]{8}" placeholder="88889999" required="" type="tel" />
+              <div class="invalid-feedback">Use 8 dígitos, sin guiones.</div>
+            </div>
+          </section>
+          <section aria-labelledby="entregaTitle" class="checkout-panel">
+            <div class="checkout-panel-title">
+              <span class="checkout-step">2</span>
+              <div>
+                <h2 id="entregaTitle">Entrega</h2>
+                <p>Definí cómo querés recibir la compra.</p>
+              </div>
+            </div>
+            <fieldset class="checkout-delivery-options">
+              <legend class="visually-hidden">Método de entrega</legend>
+              <div class="form-check checkout-radio-card">
+                <input checked="" class="form-check-input" id="entregaDomicilio" name="delivery" type="radio" value="home" />
+                <label class="form-check-label" for="entregaDomicilio">Envío a domicilio</label>
+              </div>
+              <div class="form-check checkout-radio-card">
+                <input class="form-check-input" id="entregaRetiro" name="delivery" type="radio" value="pickup" />
+                <label class="form-check-label" for="entregaRetiro">Retiro en tienda</label>
               </div>
             </fieldset>
-          </div>
-
-          <div class="form-card mb-3">
-            <div class="checkout-header p-3">
-              <h4 class="mb-0">Método de pago</h4>
+            <div class="checkout-delivery-note d-none" data-delivery="pickup">
+              <i class="bi bi-shop" aria-hidden="true"></i> Esperamos su visita para retirar el pedido en tienda.
             </div>
-
-            <fieldset class="p-3">
+            <div class="checkout-delivery-fields" data-delivery="home">
+            <div class="checkout-field">
+              <label class="form-label" for="provincia">Provincia *</label>
+              <select autocomplete="address-level1" class="form-select" id="provincia" name="provincia" required="">
+                <option value="">Seleccione</option>
+                <option>San José</option>
+                <option>Alajuela</option>
+                <option>Cartago</option>
+                <option>Heredia</option>
+              </select>
+              <div class="invalid-feedback">Seleccione una provincia dentro de la GAM.</div>
+              <div class="form-text checkout-gam-note"><i class="bi bi-info-circle" aria-hidden="true"></i> Envíos solo dentro de la GAM.</div>
+            </div>
+            <div class="checkout-field">
+              <label class="form-label" for="cantonDistrito">Cantón y distrito *</label>
+              <input autocomplete="address-level2" class="form-control" id="cantonDistrito" maxlength="80" minlength="4"
+                name="cantonDistrito" placeholder="Ej: Heredia, San Francisco" required="" type="text" />
+              <div class="invalid-feedback">Ingrese cantón y distrito.</div>
+            </div>
+            <div class="checkout-field">
+              <label class="form-label" for="direccion">Dirección exacta *</label>
+              <textarea autocomplete="street-address" class="form-control" id="direccion" maxlength="180" minlength="10"
+                name="direccion" placeholder="Cantón, distrito y señas" required="" rows="3"></textarea>
+              <div class="invalid-feedback">Ingrese una dirección más específica.</div>
+            </div>
+            </div>
+          </section>
+          <section aria-labelledby="pagoTitle" class="checkout-panel">
+            <div class="checkout-panel-title">
+              <span class="checkout-step">3</span>
+              <div>
+                <h2 id="pagoTitle">Pago</h2>
+                <p>Seleccione el método de pago.</p>
+              </div>
+            </div>
+            <fieldset class="checkout-payment-options">
               <legend class="visually-hidden">Método de pago</legend>
-              <div class="form-check mb-3">
-                <input class="form-check-input" type="radio" name="payment" checked>
-                <label class="form-check-label">Tarjeta de crédito o débito</label>
+              <div class="form-check checkout-radio-card">
+                <input checked="" class="form-check-input" id="pagoTarjeta" name="payment" type="radio" value="card" />
+                <label class="form-check-label" for="pagoTarjeta">Tarjeta</label>
               </div>
-
-              <div class="row g-3">
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Titular de la tarjeta *</label>
-                  <input class="form-control" type="text" minlength="5" maxlength="80" autocomplete="cc-name" required>
-                  <div class="form-text">Nombre como aparece en la tarjeta.</div>
-                  <div class="invalid-feedback">Ingrese el titular de la tarjeta.</div>
-                </div>
-
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Número de tarjeta *</label>
-                  <input class="form-control" type="text" inputmode="numeric" maxlength="19" pattern="[0-9 ]{13,19}"
-                    placeholder="1234 5678 9012 3456" autocomplete="cc-number" required>
-                  <div class="form-text">Dato de ejemplo para el prototipo. Use entre 13 y 19 dígitos.</div>
-                  <div class="invalid-feedback">Ingrese un número de tarjeta válido.</div>
-                </div>
-
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Fecha de expiración *</label>
-                  <input class="form-control" type="text" inputmode="numeric" maxlength="5"
-                    pattern="(0[1-9]|1[0-2])/[0-9]{2}" placeholder="MM/AA" autocomplete="cc-exp" required>
-                  <div class="invalid-feedback">Use el formato MM/AA.</div>
-                </div>
-
-                <div class="col-12 col-md-6">
-                  <label class="form-label">CVV *</label>
-                  <input class="form-control" type="text" inputmode="numeric" maxlength="4" pattern="[0-9]{3,4}"
-                    placeholder="123" autocomplete="cc-csc" required>
-                  <div class="form-text">Código de seguridad de 3 o 4 dígitos.</div>
-                  <div class="invalid-feedback">Ingrese un CVV válido.</div>
-                </div>
+              <div class="form-check checkout-radio-card">
+                <input class="form-check-input" id="pagoSinpe" name="payment" type="radio" value="sinpe" />
+                <label class="form-check-label" for="pagoSinpe">SINPE Móvil</label>
               </div>
-
-              <div class="form-check mt-3">
-                <input class="form-check-input" type="radio" name="payment">
-                <label class="form-check-label">Transferencia bancaria</label>
+              <div class="form-check checkout-radio-card" data-payment-option="cash">
+                <input class="form-check-input" id="pagoEfectivo" name="payment" type="radio" value="cash" />
+                <label class="form-check-label" for="pagoEfectivo">Efectivo</label>
+                <small class="checkout-option-hint">Solo retiro en tienda</small>
               </div>
             </fieldset>
-          </div>
-
-          <div class="form-card mb-3 p-3">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" required>
-              <div class="invalid-feedback">Debe aceptar los términos para continuar.</div>
-              <label class="form-check-label">Acepto términos y condiciones *</label>
+            <div class="checkout-payment-note d-none" data-payment="sinpe">
+              <i class="bi bi-phone" aria-hidden="true"></i> El pedido queda pendiente hasta verificar el comprobante de SINPE Móvil.
             </div>
-          </div>
-
-          <div class="checkout-actions d-grid d-md-flex gap-2">
-            <button class="btn btn-primary btn-lg flex-md-fill" type="submit">
-              Confirmar compra
-            </button>
-
-            <button class="btn btn-outline-primary btn-lg flex-md-fill" type="button" onclick="confirmCancel()">
-              Cancelar compra
-            </button>
-          </div>
-
-        </form>
+            <div class="checkout-payment-note d-none" data-payment="cash">
+              <i class="bi bi-cash-coin" aria-hidden="true"></i> El pago en efectivo se realiza al retirar el pedido en tienda.
+            </div>
+            <div class="checkout-proof-fields d-none" data-payment="sinpe">
+              <div class="checkout-field">
+                <label class="form-label" for="comprobanteSinpe">Número de comprobante SINPE *</label>
+                <input class="form-control" id="comprobanteSinpe" maxlength="30" minlength="4" name="comprobanteSinpe" placeholder="Ej: 123456789" required="" type="text" />
+                <div class="invalid-feedback">Ingrese el número o referencia del comprobante.</div>
+              </div>
+            </div>
+            <div class="checkout-card-fields" data-payment="card">
+              <div class="checkout-field">
+                <label class="form-label" for="titularTarjeta">Titular de la tarjeta *</label>
+                <input autocomplete="cc-name" class="form-control" id="titularTarjeta" maxlength="80" minlength="5"
+                  name="titularTarjeta" placeholder="Nombre en la tarjeta" required="" type="text" />
+                <div class="invalid-feedback">Ingrese el titular de la tarjeta.</div>
+              </div>
+              <div class="checkout-field">
+                <label class="form-label" for="numeroTarjeta">Número de tarjeta *</label>
+                <input autocomplete="cc-number" class="form-control" id="numeroTarjeta" inputmode="numeric"
+                  maxlength="19" name="numeroTarjeta" pattern="[0-9 ]{13,19}" placeholder="1234 5678 9012 3456"
+                  required="" type="text" />
+                <div class="invalid-feedback">Ingrese un número válido.</div>
+              </div>
+              <div class="checkout-card-grid">
+                <div class="checkout-field">
+                  <label class="form-label" for="expiracionTarjeta">Expiración *</label>
+                  <input autocomplete="cc-exp" class="form-control" id="expiracionTarjeta" inputmode="numeric"
+                    maxlength="5" name="expiracionTarjeta" pattern="(0[1-9]|1[0-2])/[0-9]{2}" placeholder="MM/AA"
+                    required="" type="text" />
+                  <div class="invalid-feedback">Use MM/AA.</div>
+                </div>
+                <div class="checkout-field">
+                  <label class="form-label" for="cvvTarjeta">CVV *</label>
+                  <div class="input-group cvv-field-group">
+                    <input autocomplete="cc-csc" class="form-control" id="cvvTarjeta" inputmode="numeric" maxlength="4"
+                      name="cvvTarjeta" pattern="[0-9]{3,4}" placeholder="***" required="" type="password" />
+                    <button class="btn btn-outline-primary cvv-toggle" type="button" aria-label="Mostrar u ocultar CVV"
+                      aria-controls="cvvTarjeta"><i class="bi bi-eye" aria-hidden="true"></i></button>
+                  </div>
+                  <div class="invalid-feedback">Use 3 o 4 dígitos.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <aside aria-labelledby="resumenTitle" class="checkout-v02-summary">
+          <section class="checkout-panel checkout-summary-panel">
+            <div class="checkout-panel-title checkout-summary-title">
+              <div>
+                <h2 id="resumenTitle">Resumen del pedido</h2>
+                <p>Verificá productos, envío y total antes de finalizar.</p>
+              </div>
+            </div>
+            <div id="checkoutSummary"></div>
+            <div class="form-check checkout-terms">
+              <input class="form-check-input" id="aceptaTerminos" name="aceptaTerminos" required="" type="checkbox" />
+              <label class="form-check-label" for="aceptaTerminos">Acepto las condiciones de compra *</label>
+              <div class="invalid-feedback">Debe aceptar para continuar.</div>
+            </div>
+            <div class="checkout-actions-v02">
+              <a class="btn btn-outline-primary btn-lg" href="carrito.html">Volver al carrito</a>
+              <button class="btn btn-primary btn-lg" type="submit">Finalizar compra</button>
+            </div>
+          </section>
+        </aside>
       </div>
-    </div>
-
-    <div class="modal fade" id="confirmPurchaseModal" tabindex="-1">
+    </form>
+    <div aria-hidden="true" aria-labelledby="confirmPurchaseTitle" class="modal fade" id="confirmPurchaseModal"
+      tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content pet-alert-content">
           <div class="modal-header">
-            <h5 class="modal-title">Confirmar compra</h5><button type="button" class="btn-close"
-              data-bs-dismiss="modal"></button>
+            <h5 class="modal-title" id="confirmPurchaseTitle">Confirmar compra</h5>
+            <button aria-label="Cerrar" class="btn-close" data-bs-dismiss="modal" type="button"></button>
           </div>
-          <div class="modal-body">¿Está seguro de confirmar la compra de los productos agregados?</div>
+          <div class="modal-body" id="confirmPurchaseMessage">¿Desea finalizar la compra con los productos del resumen?</div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Revisar</button>
-            <button type="button" class="btn btn-primary" onclick="finishPurchase()">Sí, confirmar</button>
+            <button class="btn btn-outline-primary" data-bs-dismiss="modal" type="button">Revisar</button>
+            <button class="btn btn-primary" id="finishPurchaseBtn" type="button">Sí, finalizar</button>
           </div>
         </div>
       </div>
     </div>
   </main>
-
-  <footer class="footer text-white mt-5 py-4">
-    <div class="container">
-      <div class="row g-3">
-        <div class="col-md-4">
-          <h5>PetShop UNA</h5>
-          <p class="text-white-50 mb-0">Todo lo que su mascota necesita, en un solo lugar.</p>
-        </div>
-        <div class="col-md-4">
-          <h5>Enlaces</h5><a class="d-block text-white-50" href="productos.html">Productos</a><a
-            class="d-block text-white-50" href="busqueda.html">Buscar</a><a class="d-block text-white-50"
-            href="carrito.html">Carrito</a>
-        </div>
-        <div class="col-md-4">
-          <h5>Contacto</h5>
-          <p class="text-white-50 mb-0">San José, Costa Rica<br>info@petshop.cr<br>+506 2234-5678</p>
-        </div>
-      </div>
-      <hr>
-      <p class="text-center text-white-50 mb-0">© 2026 PetShop UNA</p>
-    </div>
-  </footer>
-
-  <div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="liveToast" class="toast" role="alert">
-      <div class="toast-header"><strong class="me-auto">PetShop UNA</strong><button type="button" class="btn-close"
-          data-bs-dismiss="toast"></button></div>
-      <div class="toast-body" id="toastMessage">Acción realizada correctamente.</div>
-    </div>
-  </div>
+  <div data-component="site-footer"></div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/utilidades.js"></script>
+  <script src="assets/js/productos.js"></script>
+  <script src="assets/js/alertas.js"></script>
+  <script src="assets/js/carrito.js"></script>
+  <script src="assets/js/checkout.js"></script>
+  <script src="assets/js/interfaz.js"></script>
+  <script src="assets/js/selectores-filtros.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 
