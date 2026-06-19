@@ -1,0 +1,6 @@
+# robots.txt - Huellita PetShop
+# Permite rastreo de páginas públicas y referencia el sitemap principal.
+User-agent: *
+Allow: /
+
+Sitemap: https://andcarrillo.github.io/PetShop/sitemap.xml
