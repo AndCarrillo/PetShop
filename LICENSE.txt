@@ -1,0 +1,19 @@
+Copyright © 2026 Andrea Carrillo
+All Rights Reserved.
+
+This project and its source code are part of a personal and professional portfolio.
+
+You may not:
+- copy,
+- redistribute,
+- sell,
+- sublicense,
+- commercially use,
+- reproduce,
+- or modify this project or its contents
+
+without prior written permission from the author.
+
+Unauthorized use of this code, design, documentation, visual assets, or content is prohibited.
+
+This repository is publicly visible only for educational, portfolio, and professional presentation purposes.
