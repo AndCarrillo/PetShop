@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="project-version" content="0.0.0"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net" rel="preconnect"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Carrito | Huellita PetShop</title>
+<meta name="description" content="Revisa los productos agregados al carrito de compras antes de finalizar el pedido."/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" media="all" rel="stylesheet"/>
+<link href="assets/css/styles.v0.0.0.min.css" rel="stylesheet"/>
+<link href="assets/img/favicon-petshop.ico" rel="icon" type="image/x-icon"/>
+<meta content="Huellita PetShop" name="author"/><meta content="noindex, follow" name="robots"/><meta content="#5f4a2d" name="theme-color"/>
+<link href="manifest.webmanifest" rel="manifest"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="Huellita PetShop" name="apple-mobile-web-app-title"/><link href="https://andcarrillo.github.io/PetShop/carrito.html" rel="canonical"/><meta content="es_CR" property="og:locale"/><meta content="website" property="og:type"/><meta content="Huellita PetShop" property="og:site_name"/><meta content="Carrito | Huellita PetShop" property="og:title"/><meta content="Revisa los productos agregados al carrito de compras antes de finalizar el pedido." property="og:description"/><meta content="https://andcarrillo.github.io/PetShop/carrito.html" property="og:url"/><meta content="https://andcarrillo.github.io/PetShop/assets/img/banner/portada.avif" property="og:image"/><meta content="image/avif" property="og:image:type"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="Portada visual de Huellita PetShop con mascotas" property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><meta content="Carrito | Huellita PetShop" name="twitter:title"/><meta content="Revisa los productos agregados al carrito de compras antes de finalizar el pedido." name="twitter:description"/><meta content="https://andcarrillo.github.io/PetShop/assets/img/banner/portada.avif" name="twitter:image"/><meta content="Portada visual de Huellita PetShop con mascotas" name="twitter:image:alt"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://andcarrillo.github.io/PetShop/index.html"},{"@type":"ListItem","position":2,"name":"Carrito","item":"https://andcarrillo.github.io/PetShop/carrito.html"}]}</script>
+</head>
+<body class="pagina-interna">
+<a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+<!-- Página: carrito.html -->
+<div data-component="site-header"></div>
+<main id="contenido-principal" tabindex="-1" class="container section-space">
+<div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3 encabezado-pagina">
+<div>
+<h1 class="fw-bold mb-1">Mi carrito de compras</h1>
+<p class="text-muted mb-0">Puede aumentar unidades, disminuirlas o eliminar productos del carrito.</p>
+</div>
+<a class="btn btn-primary" href="productos.html">Volver al catálogo</a>
+</div>
+<div class="row g-4">
+<div class="col-lg-8">
+<div aria-live="polite" id="cartItems"></div>
+</div>
+<div class="col-lg-4" id="cartSummaryWrapper">
+<div class="summary-card sticky-lg-top">
+<div class="summary-header p-3">
+<h4 class="mb-0">Resumen del pedido</h4>
+</div>
+<div class="p-3">
+<div aria-live="polite" id="cartSummary"></div>
+<div class="cart-delivery-note" role="note">
+<i aria-hidden="true" class="bi bi-truck"></i>
+<span>Envíos solo dentro de la GAM.</span>
+</div>
+<a class="btn btn-checkout-continue w-100 btn-lg mt-3" href="checkout.html">Continuar con la compra</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div data-component="site-footer"></div>
+<script defer="" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script defer="" src="assets/js/app.v0.0.0.bundle.min.js"></script></body>
+</html>
