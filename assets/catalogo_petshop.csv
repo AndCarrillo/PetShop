@@ -1,0 +1,33 @@
+﻿id_producto,nombre_producto,descripcion,categoria,tipo_mascota,precio_colones,imagen,atributos_especificos
+1,Pedigree High Protein Res y Pollo 4kg,Alimento para perro adulto con proteína y sabor res y pollo.,Alimento,Perros,12500,assets/img/productos/pedigree4kg.webp,4 kg | Adulto | Res y pollo
+2,Dog Chow Cachorro 2kg,Alimento para cachorros medianos y grandes.,Alimento,Perros,9800,assets/img/productos/dogchow2kg.webp,2 kg | Cachorros | Medianos y grandes
+3,Hueso Dental Nylabone,Juguete mordedor para higiene dental canina.,Juguetes,Perros,3500,assets/img/productos/hueso.webp,Sabor bacon | 1 unidad | Resistente
+4,Shampoo Micelar Mascotas Aloe,Shampoo para higiene de mascotas con aloe.,Higiene,Perros,4200,assets/img/productos/shampoo_canino.webp,750 ml | Aloe | Uso cosmético
+5,Collar Ruffwear Azul,Collar ajustable para perro en talla L.,Accesorios,Perros,7800,assets/img/productos/collar.webp,Talla L | Azul | Ajustable
+6,Cama Ovalada para Mascota,Cama acolchada ovalada para perros o gatos.,Accesorios,Perros,18500,assets/img/productos/cama.webp,Ovalada | 1 unidad | Acolchada
+7,Jerky Sticks Beef Lung,Premios tipo jerky sticks para perros.,Salud,Perros,3900,assets/img/productos/snacks.webp,232 g | Beef lung | Premios
+8,Juguete Popet Ratones,Juguete para gato con catnip.,Juguetes,Gatos,2500,assets/img/productos/raton.webp,3 unidades | Catnip | Felino
+9,Arena Cat Litter Aroma Manzana 5kg,Arena para gatos super aglomerante con control de olores.,Higiene,Gatos,6900,assets/img/productos/arena.webp,5 kg | Aroma manzana | Aglomerante
+10,Arnés Ajustable Negro,Arnés cómodo y resistente para paseo de mascotas.,Accesorios,Perros,8500,assets/img/productos/arnes.webp,1 unidad | Ajustable | Negro
+11,Cat Chow Adultos Pescado 1.5kg,Alimento para gatos adultos sabor pescado.,Alimento,Gatos,7200,assets/img/productos/catchow.webp,1.5 kg | Adultos | Pescado
+12,Dispensador de Agua Lena 2L,Fuente y dispensador de agua para perros y gatos.,Accesorios,Gatos,14500,assets/img/productos/fuente.webp,2 litros | Dispensador | Automático
+13,Rascador para Gato,Rascador vertical con juguete colgante.,Juguetes,Gatos,11900,assets/img/productos/rascador.webp,1 unidad | Vertical | Felino
+14,Waldo Cat Pillows Salmón,Snack para gato relleno sabor salmón.,Salud,Gatos,2800,assets/img/productos/snaks_gato.webp,110 g | Salmón | Snack
+15,Transportadora para Mascotas,Transportadora resistente para viajes y veterinaria.,Accesorios,Gatos,22500,assets/img/productos/transportadora.webp,11-14 kg | Plástico | Reforzada
+16,Whiskas Adulto Carne 500g,Alimento para gato adulto sabor carne.,Alimento,Gatos,3200,assets/img/productos/whiskas1kg.webp,500 g | Carne | Adulto
+17,Bebedero Living World 125ml,"Bebedero para aves pequeñas, útil para agua o semillas.",Accesorios,Aves,2600,assets/img/productos/bebedero.webp,125 ml | Aves pequeñas | Plástico
+18,Columpio Colorido para Aves,Columpio con cadenas y piezas de colores para entretenimiento de aves.,Juguetes,Aves,2200,assets/img/productos/columpio.webp,1 unidad | Madera | Colores variados
+19,Jaula Roja para Aves,Jaula metálica para aves pequeñas con comederos y percha.,Accesorios,Aves,28000,assets/img/productos/jaula.webp,Metálica | Incluye accesorios | Tamaño mediano
+20,Semillas Kiki Canario 400g,Mezcla de semillas vita para canario.,Alimento,Aves,4500,assets/img/productos/semillas.webp,400 g | Canario | Mezcla de semillas
+21,Vitaminas Calfomin para Aves,Suplemento vitamínico para aves de compañía.,Salud,Aves,3800,assets/img/productos/vitaminas_aves.webp,30 ml | Suplemento | Uso en aves
+22,Planta Decorativa Azul para Acuario,Decoración tipo coral/planta artificial para peceras.,Accesorios,Peces,4800,assets/img/productos/coral.webp,Decoración | Azul | Base incluida
+23,Nutrafin Basix Hojuelas 12g,Alimento en hojuelas para peces tropicales.,Alimento,Peces,2800,assets/img/productos/escamas.webp,12 g | Peces tropicales | Hojuelas
+24,Filtro Aire Aqueon QuietFlow 10,Bomba de aire silenciosa para acuarios pequeños.,Salud,Peces,9500,assets/img/productos/filtro.webp,Hasta 10 galones | Silencioso | Bajo consumo
+25,Luz LED para Acuario,Iluminación LED para mejorar la visibilidad del acuario.,Accesorios,Peces,12500,assets/img/productos/luz_led.webp,LED azul/blanco | Para pecera | Bajo consumo
+26,Pecera Rectangular 20L,Pecera rectangular con tapa para peces pequeños.,Accesorios,Peces,32000,assets/img/productos/pecera.webp,20 litros | Rectangular | Vidrio
+27,Viruta Kaytee Clean & Cozy,Viruta absorbente con control de olor para roedores y conejos.,Higiene,Pequeñas especies,6900,assets/img/productos/viruta.webp,1 unidad | Control de olor | Absorbente
+28,Rueda Azul para Hámster,Rueda de ejercicio silenciosa para hámster y pequeños roedores.,Juguetes,Pequeñas especies,5400,assets/img/productos/wheel.webp,Azul | Silenciosa | Ejercicio
+29,Bebedero para Roedores,"Bebedero automático para conejos, cuyos y hurones.",Accesorios,Pequeñas especies,4800,assets/img/productos/bebedero_roedor.webp,Automático | Azul | Fácil instalación
+30,Rabbit Plus Conejo Mix 2kg,Alimento balanceado para conejos domésticos.,Alimento,Pequeñas especies,7600,assets/img/productos/conejo.webp,2 kg | Conejos | Balanceado
+31,Jaula Deluxe para Hámster,Jaula completa para hámster con rueda y accesorios.,Accesorios,Pequeñas especies,36500,assets/img/productos/jaula_hamster.webp,Incluye rueda | Bebedero | Casa
+32,Snack Curly Puffs Zanahoria,Snack para conejos y pequeños roedores sabor zanahoria.,Salud,Pequeñas especies,3500,assets/img/productos/snack_zanahoria.webp,9 piezas | Zanahoria | Premio
