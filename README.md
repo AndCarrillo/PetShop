@@ -7,7 +7,7 @@
 Modern shopping experience focused on responsive design, usability, accessibility, SEO, and performance.
 
 🔗 **Live Demo**
-https://andcarrillo.github.io/PetShop/
+https://huellita-petshop.netlify.app/
 
 <div align="center">
 
